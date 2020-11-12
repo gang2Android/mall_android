@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cart_cart_num_start">购物车(</string>
+    <string name="cart_cart_num_end">)</string>
+    <string name="cart_cart_pay_start">结算(</string>
+    <string name="cart_cart_pay_end">)</string>
+</resources>

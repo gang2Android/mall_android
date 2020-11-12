@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/order_adapter_order_bot_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="总价："
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/order_adapter_order_bot_price"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/order_adapter_order_bot_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="xxx"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/order_adapter_order_bot_2"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="订单号："-->
+    <!--        android:textColor="@android:color/black"-->
+    <!--        android:textSize="14sp"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/order_adapter_order_bot_1" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/order_adapter_order_bot_no"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="xxx"-->
+    <!--        android:textColor="@android:color/black"-->
+    <!--        android:textSize="14sp"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/order_adapter_order_bot_2"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/order_adapter_order_bot_2" />-->
+
+    <LinearLayout
+        android:id="@+id/order_adapter_order_bot_s"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|end"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/order_adapter_order_bot_1">
+
+        <Button
+            android:id="@+id/order_adapter_order_bot_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取消订单"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/order_adapter_order_bot_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:textColor="@android:color/white"
+            android:text="付款"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/order_adapter_order_bot_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="催促发货"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/order_adapter_order_bot_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="申请售后"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/order_adapter_order_bot_log"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查看物流"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/order_adapter_order_bot_affirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:textColor="@android:color/white"
+            android:text="确认收货"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/order_adapter_order_bot_access"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:textColor="@android:color/white"
+            android:text="评价"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/order_adapter_order_bot_receipt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="申请开票"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/order_adapter_order_bot_del"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="删除订单"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/order_adapter_order_bot_too"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:textColor="@android:color/white"
+            android:text="再次购买"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

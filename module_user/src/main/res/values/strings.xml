@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="user_app_name">Gang2020-user</string>
+
+    <string name="user_login_title">会员登录</string>
+    <string name="user_login_desc">未注册的手机号登录成功后将自动注册</string>
+    <string name="user_login_name">请输入手机号</string>
+    <string name="user_login_pwd">请输入密码</string>
+    <string name="user_login_code">请输入验证码</string>
+    <string name="user_login_get">获取验证码</string>
+    <string name="user_login_type_0">密码登录</string>
+    <string name="user_login_type_1">验证码登录</string>
+
+    <string name="user_reg_title">会员注册</string>
+    <string name="user_reg_name">请输入姓名</string>
+    <string name="user_reg_mobile">请输入手机号</string>
+    <string name="user_reg_get">获取验证码</string>
+    <string name="user_reg_code">请输入验证码</string>
+    <string name="user_reg_pwd">请输入密码</string>
+    <string name="user_reg_pwd1">请确认密码</string>
+    <string name="user_reg_in">请输入邀请码</string>
+
+    <string name="user_address_name">请输入收货人姓名</string>
+    <string name="user_address_mobile">请输入手机号</string>
+    <string name="user_address_region">请选择地区</string>
+    <string name="user_address_info">请输入详细地址</string>
+    <string name="user_address_default">设置为默认地址</string>
+</resources>

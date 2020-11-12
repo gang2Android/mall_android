@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.gang.module_user.reg.RegViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/user_reg_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="关闭"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/user_reg_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:text="@string/user_reg_title"
+            android:textColor="@android:color/black"
+            android:textSize="26sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/user_reg_in"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/user_reg_in"
+            android:inputType="text"
+            android:padding="5dp"
+            android:text="@={vm.inviteCode}"
+            android:textColor="@color/user_gray_text"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_reg_title" />
+
+        <View
+            android:id="@+id/user_reg_temp_0"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="#efefef"
+            app:layout_constraintTop_toBottomOf="@+id/user_reg_in" />
+
+        <EditText
+            android:id="@+id/user_reg_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/user_reg_name"
+            android:inputType="text"
+            android:padding="5dp"
+            android:text="@={vm.name}"
+            android:textColor="@color/user_gray_text"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_reg_temp_0" />
+
+        <View
+            android:id="@+id/user_reg_temp_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="#efefef"
+            app:layout_constraintTop_toBottomOf="@+id/user_reg_name" />
+
+        <EditText
+            android:id="@+id/user_reg_mobile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/user_reg_mobile"
+            android:inputType="phone"
+            android:padding="5dp"
+            android:text="@={vm.mobile}"
+            android:textColor="@color/user_gray_text"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_reg_temp_1" />
+
+        <View
+            android:id="@+id/user_reg_temp_2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="#efefef"
+            app:layout_constraintTop_toBottomOf="@+id/user_reg_mobile" />
+
+        <EditText
+            android:id="@+id/user_reg_code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/user_reg_code"
+            android:inputType="phone"
+            android:padding="5dp"
+            android:text="@={vm.code}"
+            android:textColor="@color/user_gray_text"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_reg_temp_2" />
+
+        <TextView
+            android:id="@+id/user_reg_get"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="25dp"
+            android:padding="5dp"
+            android:text="@{vm.getCodeStr}"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/user_reg_code"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <View
+            android:id="@+id/user_reg_temp_3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="#efefef"
+            app:layout_constraintTop_toBottomOf="@+id/user_reg_code" />
+
+        <EditText
+            android:id="@+id/user_reg_pwd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/user_reg_pwd"
+            android:inputType="textPassword"
+            android:padding="5dp"
+            android:text="@={vm.pwd}"
+            android:textColor="@color/user_gray_text"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_reg_temp_3" />
+
+        <View
+            android:id="@+id/user_reg_temp_4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="#efefef"
+            app:layout_constraintTop_toBottomOf="@+id/user_reg_pwd" />
+
+        <EditText
+            android:id="@+id/user_reg_pwd1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/user_reg_pwd1"
+            android:inputType="textPassword"
+            android:padding="5dp"
+            android:text="@={vm.pwd1}"
+            android:textColor="@color/user_gray_text"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_reg_temp_4" />
+
+        <View
+            android:id="@+id/user_reg_temp_5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="#efefef"
+            app:layout_constraintTop_toBottomOf="@+id/user_reg_pwd1" />
+
+        <Button
+            android:id="@+id/user_reg_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/user_reg_btn_on"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:text="注册"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_reg_temp_5" />
+
+        <TextView
+            android:id="@+id/user_reg_temp_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="注册即代表同意"
+            android:textColor="@color/user_gray_text"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/user_reg_temp_7"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_reg_ok" />
+
+        <TextView
+            android:id="@+id/user_reg_temp_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="《用户协议》"
+            android:textColor="@color/user_blue"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/user_reg_temp_6"
+            app:layout_constraintTop_toBottomOf="@+id/user_reg_ok" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.gang.module_user.address.det.AddressDetViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/addressDet_top"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@android:drawable/arrow_down_float"
+            app:title="编辑地址"
+            app:titleTextColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/user_addressDet_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/user_address_name"
+            android:inputType="text"
+            android:padding="5dp"
+            android:text="@={vm.item.receiveName}"
+            android:textColor="@color/user_gray_text"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addressDet_top" />
+
+        <View
+            android:id="@+id/user_addressDet_temp_0"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="#efefef"
+            app:layout_constraintTop_toBottomOf="@+id/user_addressDet_name" />
+
+        <EditText
+            android:id="@+id/user_addressDet_mobile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/user_address_mobile"
+            android:inputType="phone"
+            android:padding="5dp"
+            android:text="@={vm.item.mobile}"
+            android:textColor="@color/user_gray_text"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_addressDet_temp_0" />
+
+        <View
+            android:id="@+id/user_addressDet_temp_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="#efefef"
+            app:layout_constraintTop_toBottomOf="@+id/user_addressDet_mobile" />
+
+        <EditText
+            android:id="@+id/user_addressDet_region"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/user_address_region"
+            android:inputType="text"
+            android:padding="5dp"
+            android:text="@={vm.item.province}"
+            android:textColor="@color/user_gray_text"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_addressDet_temp_1" />
+
+        <View
+            android:id="@+id/user_addressDet_temp_2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="#efefef"
+            app:layout_constraintTop_toBottomOf="@+id/user_addressDet_region" />
+
+        <EditText
+            android:id="@+id/user_addressDet_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/user_address_info"
+            android:inputType="text"
+            android:padding="5dp"
+            android:text="@={vm.item.address}"
+            android:textColor="@color/user_gray_text"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_addressDet_temp_2" />
+
+        <View
+            android:id="@+id/user_addressDet_temp_3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="#efefef"
+            app:layout_constraintTop_toBottomOf="@+id/user_addressDet_info" />
+
+        <TextView
+            android:id="@+id/user_addressDet_temp_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/user_address_default"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_addressDet_temp_3" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/user_addressDet_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:checked="@={vm.item.isDefault}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/user_addressDet_temp_4"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/user_addressDet_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/user_login_btn_on"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:text="确定"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_addressDet_temp_4" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,18 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gang.module_order">
+
+    <application>
+        <activity
+            android:name=".affirm.OrderAffirmActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".list.OrderListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".det.OrderDetActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".pay.PayActivity"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/user_adapter_me_top_img"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/user_me_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_adapter_me_top_set" />
+
+    <TextView
+        android:id="@+id/user_adapter_me_top_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="昵称"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/user_adapter_me_top_desc"
+        app:layout_constraintStart_toEndOf="@+id/user_adapter_me_top_img"
+        app:layout_constraintTop_toTopOf="@+id/user_adapter_me_top_img" />
+
+    <TextView
+        android:id="@+id/user_adapter_me_top_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="备注"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/user_adapter_me_top_img"
+        app:layout_constraintStart_toStartOf="@+id/user_adapter_me_top_name"
+        app:layout_constraintTop_toBottomOf="@+id/user_adapter_me_top_name" />
+
+    <ImageView
+        android:id="@+id/user_adapter_me_top_set"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/user_me_set"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

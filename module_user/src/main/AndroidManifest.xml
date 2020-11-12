@@ -1,0 +1,21 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gang.module_user">
+
+    <application>
+        <activity
+            android:name=".login.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reg.RegActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".address.AddressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".address.det.AddressDetActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".share.ShareActivity"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>

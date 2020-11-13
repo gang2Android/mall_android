@@ -55,6 +55,7 @@ class MeFragment : BaseFragment() {
         dataBinding.userMeRv.adapter = adapter
 
         adapter?.addChildClickViewIds(
+            R.id.user_adapter_me_top_set,
             R.id.user_adapter_me_order_more,
             R.id.user_adapter_me_order_pay,
             R.id.user_adapter_me_order_send,
@@ -82,6 +83,10 @@ class MeFragment : BaseFragment() {
                 }
                 R.id.user_adapter_me_order_service -> {
                     type = 5
+                }
+                R.id.user_adapter_me_top_set -> {
+                    ARouter.getInstance().build(ModuleRouter.USER_SET_ACT).navigation()
+                    return@setOnItemChildClickListener
                 }
                 else -> {
                     return@setOnItemChildClickListener

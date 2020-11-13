@@ -89,4 +89,12 @@ abstract class BaseFragment : Fragment() {
 
     abstract fun initOther()
 
+    fun exit(){
+        if (requireActivity().supportFragmentManager.backStackEntryCount < 1) {
+            requireActivity().finish()
+        } else {
+            requireActivity().supportFragmentManager.popBackStack()
+        }
+    }
+
 }

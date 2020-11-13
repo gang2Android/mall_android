@@ -52,11 +52,7 @@ class ShareFragment : BaseFragment() {
 
     override fun initListener() {
         dataBinding.shareTop.setOnClickListener {
-            if (requireActivity().supportFragmentManager.backStackEntryCount < 1) {
-                requireActivity().finish()
-            } else {
-                requireActivity().supportFragmentManager.popBackStack()
-            }
+            exit()
         }
         dataBinding.shareBotWx.setOnClickListener {
             ToastUtils.show(requireContext(), "微信")

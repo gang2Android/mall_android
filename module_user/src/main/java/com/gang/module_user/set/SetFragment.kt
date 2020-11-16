@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.gang.lib_base.AppUtils
 import com.gang.module_base.BaseFragment
 import com.gang.module_router.ModuleRouter
 import com.gang.module_user.R
@@ -42,5 +43,7 @@ class SetFragment : BaseFragment() {
     }
 
     override fun initOther() {
+        val versionName = "V" + AppUtils.getVersionName(requireContext())
+        dataBinding.setVersion.text = versionName
     }
 }

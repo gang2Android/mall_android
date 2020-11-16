@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.alibaba.android.arouter.launcher.ARouter
 import com.gang.lib_base.AppUtils
 import com.gang.module_base.BaseFragment
 import com.gang.module_router.ModuleRouter
@@ -36,6 +37,14 @@ class SetFragment : BaseFragment() {
     override fun initView() {
         dataBinding.setTop.setOnClickListener {
             exit()
+        }
+        dataBinding.setPwdLogin.setOnClickListener {
+            ARouter.getInstance().build(ModuleRouter.USER_PWD_ACT).withBoolean("isLogin", true)
+                .navigation()
+        }
+        dataBinding.setPwdPay.setOnClickListener {
+            ARouter.getInstance().build(ModuleRouter.USER_PWD_ACT).withBoolean("isLogin", false)
+                .navigation()
         }
     }
 

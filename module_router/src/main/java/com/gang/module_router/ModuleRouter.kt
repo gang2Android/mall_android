@@ -30,6 +30,9 @@ object ModuleRouter {
     const val USER_PWD = "/user/pwd"
     const val USER_PWD_ACT = "/user/pwd/activity"
 
+    const val USER_ACCOUNT = "/user/account"
+    const val USER_ACCOUNT_ACT = "/user/account/activity"
+
     const val USER_ADDRESS_LIST = "/user/address/list"
     const val USER_ADDRESS_LIST_ACTIVITY = "/user/address/list/activity"
     const val USER_ADDRESS_DET = "/user/address/det"

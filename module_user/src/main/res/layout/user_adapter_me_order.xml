@@ -6,7 +6,8 @@
     android:layout_marginStart="10dp"
     android:layout_marginEnd="10dp"
     android:background="@drawable/user_bg_radius"
-    android:padding="10dp">
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
 
     <TextView
         android:id="@+id/user_adapter_me_order_title"

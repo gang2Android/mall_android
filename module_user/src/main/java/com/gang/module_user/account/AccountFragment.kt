@@ -1,4 +1,4 @@
-package com.gang.module_user.pwd
+package com.gang.module_user.account
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,12 +10,12 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.gang.module_base.BaseFragment
 import com.gang.module_router.ModuleRouter
 import com.gang.module_user.R
-import com.gang.module_user.databinding.UserFragmentPwdBinding
+import com.gang.module_user.databinding.UserFragmentAccountBinding
 
-@Route(path = ModuleRouter.USER_PWD)
-class PwdFragment : BaseFragment() {
-    private lateinit var dataBinding: UserFragmentPwdBinding
-    private lateinit var viewModel: PwdViewModel
+@Route(path = ModuleRouter.USER_ACCOUNT)
+class AccountFragment : BaseFragment() {
+    private lateinit var dataBinding: UserFragmentAccountBinding
+    private lateinit var viewModel: AccountViewModel
 
     override fun getRootView(
         inflater: LayoutInflater,
@@ -23,8 +23,8 @@ class PwdFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View {
         dataBinding =
-            DataBindingUtil.inflate(inflater, R.layout.user_fragment_pwd, container, false)
-        viewModel = ViewModelProvider(this).get(PwdViewModel::class.java)
+            DataBindingUtil.inflate(inflater, R.layout.user_fragment_account, container, false)
+        viewModel = ViewModelProvider(this).get(AccountViewModel::class.java)
 
         dataBinding.vm = viewModel
         dataBinding.lifecycleOwner = this
@@ -33,19 +33,19 @@ class PwdFragment : BaseFragment() {
     }
 
     override fun initView() {
+
     }
 
     override fun initListener() {
-        dataBinding.pwdTop.setOnClickListener { exit() }
+        dataBinding.accountTop.setOnClickListener {
+            exit()
+        }
     }
 
     override fun initOther() {
-        arguments!!.getBoolean("isLogin").let {
-            if (it) {
-                dataBinding.pwdTop.title = "忘记登录密码"
-            } else {
-                dataBinding.pwdTop.title = "忘记支付密码"
-            }
+        arguments!!.getInt("type").let {
+            viewModel.setType(it)
         }
     }
+
 }

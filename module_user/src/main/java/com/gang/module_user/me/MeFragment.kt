@@ -55,6 +55,10 @@ class MeFragment : BaseFragment() {
         dataBinding.userMeRv.adapter = adapter
 
         adapter?.addChildClickViewIds(
+            R.id.user_adapter_me_top_img,
+            R.id.user_adapter_me_account_balance,
+            R.id.user_adapter_me_account_integral,
+            R.id.user_adapter_me_account_service,
             R.id.user_adapter_me_top_set,
             R.id.user_adapter_me_order_more,
             R.id.user_adapter_me_order_pay,
@@ -66,6 +70,25 @@ class MeFragment : BaseFragment() {
         adapter?.setOnItemChildClickListener { adapter, view, position ->
             var type = 0
             when (view.id) {
+                R.id.user_adapter_me_top_img -> {
+                    ARouter.getInstance().build(ModuleRouter.USER_LOGIN_ACTIVITY).navigation()
+                    return@setOnItemChildClickListener
+                }
+                R.id.user_adapter_me_account_balance -> {
+                    ARouter.getInstance().build(ModuleRouter.USER_ACCOUNT_ACT)
+                        .withInt("type", 1).navigation()
+                    return@setOnItemChildClickListener
+                }
+                R.id.user_adapter_me_account_integral -> {
+                    ARouter.getInstance().build(ModuleRouter.USER_ACCOUNT_ACT)
+                        .withInt("type", 2).navigation()
+                    return@setOnItemChildClickListener
+                }
+                R.id.user_adapter_me_account_service -> {
+                    ARouter.getInstance().build(ModuleRouter.USER_ACCOUNT_ACT)
+                        .withInt("type", 3).navigation()
+                    return@setOnItemChildClickListener
+                }
                 R.id.user_adapter_me_order_more -> {
                     type = 0
                 }

@@ -14,11 +14,9 @@ class MeViewModel : BaseViewModel() {
 
     fun getUserInfo() {
         go {
-            withContext(Dispatchers.Default) {
-                val result = repository.value.getUserInfo()
-                LogUtils.print("result=$result")
-                meData.postValue(result)
-            }
+            val result = repository.value.getUserInfo()
+            LogUtils.print("result=$result")
+            meData.postValue(result)
         }
     }
 }

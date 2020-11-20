@@ -5,7 +5,7 @@ import com.gang.module_base.BaseRepository
 import com.google.gson.Gson
 
 class CartRepository : BaseRepository() {
-    fun getCartData(): MutableMap<String, Any> {
+    suspend fun getCartData(): MutableMap<String, Any> {
         val jsonStr =
             "{\"sum_money\":\"2360.4\",\"sum_integral\":\"0.0\",\"sum_giveintegral\":\"0.0\",\"goods_num\":\"4\",\"data_list\":[{\"supid\":\"3\",\"supname\":\"精品区\",\"sub\":[{\"proid\":\"243\",\"shopprice\":\"110.40\",\"consumeintegral\":\"0.00\",\"giveintegral\":\"0.00\",\"id\":\"6803\",\"status\":\"1\",\"proname\":\"WQii威可 男士商务皮带经典男士自动扣皮带开A089935208\",\"stylename\":\"110*3.5CM\",\"pronum\":\"1\",\"proimg\":\"http://www.999000.cn/data/files/store_2/goods_28/small_1572941828201911051617084020.jpg\",\"isonsell\":\"0\",\"balancePrice\":368,\"lfz\":66.24},{\"proid\":\"381\",\"shopprice\":\"750.00\",\"consumeintegral\":\"0.00\",\"giveintegral\":\"0.00\",\"id\":\"8991\",\"status\":\"1\",\"proname\":\"FOX菲可斯时尚百搭斜挎包男士单肩包A086909171004\",\"stylename\":\"33cm*10cm*25cm\",\"pronum\":\"3\",\"proimg\":\"http://www.999000.cn/data/files/store_2/goods_43/small_1506741043201709301110435798.jpg\",\"isonsell\":\"1\",\"balancePrice\":2499,\"lfz\":599}]},{\"supid\":\"2\",\"supname\":\"精品区\",\"sub\":[{\"proid\":\"243\",\"shopprice\":\"110.40\",\"consumeintegral\":\"0.00\",\"giveintegral\":\"0.00\",\"id\":\"6803\",\"status\":\"1\",\"proname\":\"WQii威可 男士商务皮带经典男士自动扣皮带开A089935208\",\"stylename\":\"110*3.5CM\",\"pronum\":\"1\",\"proimg\":\"http://www.999000.cn/data/files/store_2/goods_28/small_1572941828201911051617084020.jpg\",\"isonsell\":\"0\",\"balancePrice\":368,\"lfz\":66.24},{\"proid\":\"381\",\"shopprice\":\"750.00\",\"consumeintegral\":\"0.00\",\"giveintegral\":\"0.00\",\"id\":\"8991\",\"status\":\"1\",\"proname\":\"FOX菲可斯时尚百搭斜挎包男士单肩包A086909171004\",\"stylename\":\"33cm*10cm*25cm\",\"pronum\":\"3\",\"proimg\":\"http://www.999000.cn/data/files/store_2/goods_43/small_1506741043201709301110435798.jpg\",\"isonsell\":\"1\",\"balancePrice\":2499,\"lfz\":599}]}]}"
         val gson = Gson()
@@ -33,7 +33,7 @@ class CartRepository : BaseRepository() {
         return resultMap
     }
 
-    fun selectAll(list: MutableList<CartEntity>, check: Boolean): MutableMap<String, Any> {
+    suspend fun selectAll(list: MutableList<CartEntity>, check: Boolean): MutableMap<String, Any> {
 
         val data = mutableListOf<CartEntity>()
         data.addAll(list)
@@ -63,7 +63,7 @@ class CartRepository : BaseRepository() {
         return resultMap
     }
 
-    fun selectSup(data: MutableList<CartEntity>, position: Int): MutableMap<String, Any> {
+    suspend fun selectSup(data: MutableList<CartEntity>, position: Int): MutableMap<String, Any> {
         val resultMap = mutableMapOf<String, Any>()
         var price = "0.00"
         var num = "0"
@@ -102,7 +102,7 @@ class CartRepository : BaseRepository() {
         return resultMap
     }
 
-    fun selectPro(data: MutableList<CartEntity>, position: Int): MutableMap<String, Any> {
+    suspend fun selectPro(data: MutableList<CartEntity>, position: Int): MutableMap<String, Any> {
         val resultMap = mutableMapOf<String, Any>()
         var price = "0.00"
         var num = "0"

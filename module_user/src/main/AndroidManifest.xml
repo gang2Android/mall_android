@@ -28,5 +28,8 @@
         <activity
             android:name=".pwd.PwdActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".account.AccountActivity"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>

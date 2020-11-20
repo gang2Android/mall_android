@@ -31,13 +31,11 @@ class LoginViewModel : BaseViewModel() {
     fun login() {
         go {
             LogUtils.print("=1=${Thread.currentThread().name}")
-            withContext(Dispatchers.Default) {
-                LogUtils.print("=2=${Thread.currentThread().name}")
-                try {
-                    val data = repository.value.login(name.value!!, pwd.value!!)
-                } catch (e: Exception) {
-                    hint.postValue(e.message.toString())
-                }
+            LogUtils.print("=2=${Thread.currentThread().name}")
+            try {
+                val data = repository.value.login(name.value!!, pwd.value!!)
+            } catch (e: Exception) {
+                hint.postValue(e.message.toString())
             }
         }
     }

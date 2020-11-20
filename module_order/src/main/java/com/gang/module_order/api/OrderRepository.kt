@@ -126,7 +126,7 @@ class OrderRepository : BaseRepository() {
         return result
     }
 
-    fun getOrderPayInfo(no: String): PayBean {
+    suspend fun getOrderPayInfo(no: String): PayBean {
         val jsonStr = "{\"no\":\"13123123\",\"fright\":\"0.00\",\"price\":\"1.00\"}"
         val gson = Gson()
         return gson.fromJson(jsonStr, PayBean::class.java)

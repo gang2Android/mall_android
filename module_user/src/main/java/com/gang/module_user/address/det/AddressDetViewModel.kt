@@ -20,12 +20,10 @@ class AddressDetViewModel : BaseViewModel() {
 
     fun saveItem() {
         go {
-            withContext(Dispatchers.Default) {
-                try {
-                    repository.value.saveAddress(item.value!!)
-                } catch (e: Exception) {
-                    hint.postValue(e.message)
-                }
+            try {
+                repository.value.saveAddress(item.value!!)
+            } catch (e: Exception) {
+                hint.postValue(e.message)
             }
         }
     }

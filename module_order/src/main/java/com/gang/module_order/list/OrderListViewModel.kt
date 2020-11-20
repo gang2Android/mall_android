@@ -16,10 +16,8 @@ class OrderListViewModel : BaseViewModel() {
 
     fun getOrderList() {
         go {
-            withContext(Dispatchers.Default) {
-                val result = repository.value.getOrderList(page,type)
-                orderList.postValue(result)
-            }
+            val result = repository.value.getOrderList(page, type)
+            orderList.postValue(result)
         }
     }
 }

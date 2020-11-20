@@ -14,10 +14,8 @@ class OrderDetailViewModel : BaseViewModel() {
 
     fun getOrderDetail() {
         go {
-            withContext(Dispatchers.Default) {
-                val result = repository.value.getOrderDetail(no.value.toString())
-                detailBean.postValue(result)
-            }
+            val result = repository.value.getOrderDetail(no.value.toString())
+            detailBean.postValue(result)
         }
     }
 

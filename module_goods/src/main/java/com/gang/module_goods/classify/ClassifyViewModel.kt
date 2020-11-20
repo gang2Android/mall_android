@@ -12,9 +12,7 @@ class ClassifyViewModel : BaseViewModel() {
 
     fun getClassifyData() {
         go {
-            val result = withContext(Dispatchers.IO) {
-                repository.getClassifyData()
-            }
+            val result = repository.getClassifyData()
             classifyData.postValue(result)
         }
     }

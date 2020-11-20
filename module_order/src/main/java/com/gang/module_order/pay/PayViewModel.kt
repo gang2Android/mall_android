@@ -14,10 +14,8 @@ class PayViewModel : BaseViewModel() {
 
     fun getOrderPayInfo() {
         go {
-            withContext(Dispatchers.Default) {
-                val result = repository.value.getOrderPayInfo(no)
-                payBean.postValue(result)
-            }
+            val result = repository.value.getOrderPayInfo(no)
+            payBean.postValue(result)
         }
     }
 

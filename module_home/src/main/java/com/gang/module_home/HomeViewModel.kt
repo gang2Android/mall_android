@@ -12,9 +12,7 @@ class HomeViewModel : BaseViewModel() {
 
     fun getHomeData() {
         go {
-            val result = withContext(Dispatchers.IO) {
-                repository.getHomeData()
-            }
+            val result = repository.getHomeData()
             homeEntity.postValue(result)
         }
     }

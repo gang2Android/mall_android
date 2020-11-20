@@ -8,16 +8,6 @@ import kotlinx.coroutines.withContext
 class AdvertViewModel : BaseViewModel() {
 
     fun getAdvertData() {
-        go {
-            withContext(Dispatchers.Default){
-                LogUtils.print("2222"+Thread.currentThread().name)
-                Thread.sleep(5000)
-                LogUtils.print("2222"+Thread.currentThread().name)
-            }
-
-            LogUtils.print("1111"+Thread.currentThread().name)
-        }
-
     }
 
 }

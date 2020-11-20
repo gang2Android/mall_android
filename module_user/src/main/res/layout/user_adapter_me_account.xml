@@ -27,76 +27,91 @@
         android:background="#efefef"
         app:layout_constraintTop_toBottomOf="@+id/user_adapter_me_account_title" />
 
-    <TextView
-        android:id="@+id/user_adapter_me_account_blacnce_num"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="15dp"
-        android:text="0.00"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/user_adapter_me_account_integral_num"
+    <LinearLayout
+        android:id="@+id/user_adapter_me_account_balance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/user_adapter_me_account_integral"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_adapter_me_account_line" />
+        app:layout_constraintTop_toBottomOf="@+id/user_adapter_me_account_line">
 
-    <TextView
-        android:id="@+id/user_adapter_me_account_blacnce_name"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/user_adapter_me_account_balance_num"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="15dp"
+            android:text="0.00"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="余额"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/user_adapter_me_account_integral"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="余额"
-        android:textColor="@android:color/black"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/user_adapter_me_account_blacnce_num"
-        app:layout_constraintStart_toStartOf="@+id/user_adapter_me_account_blacnce_num"
-        app:layout_constraintTop_toBottomOf="@+id/user_adapter_me_account_blacnce_num" />
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/user_adapter_me_account_service"
+        app:layout_constraintStart_toEndOf="@+id/user_adapter_me_account_balance"
+        app:layout_constraintTop_toBottomOf="@+id/user_adapter_me_account_line">
 
-    <TextView
-        android:id="@+id/user_adapter_me_account_integral_num"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="15dp"
-        android:text="0.00"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/user_adapter_me_account_service_num"
-        app:layout_constraintStart_toEndOf="@+id/user_adapter_me_account_blacnce_num"
-        app:layout_constraintTop_toBottomOf="@+id/user_adapter_me_account_line" />
+        <TextView
+            android:id="@+id/user_adapter_me_account_integral_num"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="15dp"
+            android:text="0.00"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/user_adapter_me_account_integral_name"
-        android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="积分"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/user_adapter_me_account_service"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="积分"
-        android:textColor="@android:color/black"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/user_adapter_me_account_integral_num"
-        app:layout_constraintStart_toStartOf="@+id/user_adapter_me_account_integral_num"
-        app:layout_constraintTop_toBottomOf="@+id/user_adapter_me_account_integral_num" />
-
-    <TextView
-        android:id="@+id/user_adapter_me_account_service_num"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="15dp"
-        android:text="0.00"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/user_adapter_me_account_integral_num"
-        app:layout_constraintTop_toBottomOf="@+id/user_adapter_me_account_line" />
+        app:layout_constraintStart_toEndOf="@+id/user_adapter_me_account_integral"
+        app:layout_constraintTop_toBottomOf="@+id/user_adapter_me_account_line">
 
-    <TextView
-        android:id="@+id/user_adapter_me_account_service_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="佣金"
-        android:textColor="@android:color/black"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/user_adapter_me_account_service_num"
-        app:layout_constraintStart_toStartOf="@+id/user_adapter_me_account_service_num"
-        app:layout_constraintTop_toBottomOf="@+id/user_adapter_me_account_service_num" />
+        <TextView
+            android:id="@+id/user_adapter_me_account_service_num"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="15dp"
+            android:text="0.00"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="佣金"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

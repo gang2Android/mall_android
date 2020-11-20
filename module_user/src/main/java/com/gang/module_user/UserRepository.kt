@@ -68,7 +68,7 @@ class UserRepository : BaseRepository() {
         throw Exception(data.msg)
     }
 
-    fun getCode() {
+    suspend fun getCode(mobile: String) {
         Thread.sleep(2000)
     }
 
@@ -91,5 +91,8 @@ class UserRepository : BaseRepository() {
             throw Exception("地区不能为空")
         if (item.address == "")
             throw Exception("详细地址不能为空")
+    }
+
+    suspend fun getAccountInfo(it: Int) {
     }
 }

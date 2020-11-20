@@ -33,17 +33,19 @@ class RegViewModel : BaseViewModel() {
         if (count != 60) {
             return
         }
+        if (mobile.value == null)
+            return
+        if (mobile.value.equals(""))
+            return
         go {
-            withContext(Dispatchers.Default) {
-                repository.value.getCode()
-                while (count != 0) {
-                    getCodeStr.postValue("${count}S后重新获取")
-                    Thread.sleep(1000)
-                    count -= 1
-                }
-                getCodeStr.postValue("重新获取验证码")
-                count = 60
+            repository.value.getCode(mobile.value!!)
+            while (count != 0) {
+                getCodeStr.postValue("${count}S后重新获取")
+                Thread.sleep(1000)
+                count -= 1
             }
+            getCodeStr.postValue("重新获取验证码")
+            count = 60
         }
     }
 

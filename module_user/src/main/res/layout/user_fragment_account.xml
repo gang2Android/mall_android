@@ -20,7 +20,7 @@
             android:background="@color/colorPrimary"
             app:layout_constraintTop_toTopOf="parent"
             app:navigationIcon="@android:drawable/arrow_down_float"
-            app:title="@{vm.type}"
+            app:title="@{vm.typeStr}"
             app:titleTextColor="@android:color/white" />
 
         <androidx.cardview.widget.CardView
@@ -52,12 +52,22 @@
                     android:id="@+id/account_num"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0.00"
+                    android:text="@{vm.money.toString()}"
                     android:textColor="@android:color/black"
                     android:textSize="50sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/account_temp_1" />
+
+                <TextView
+                    android:id="@+id/account_temp_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="点击查看记录"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/account_num" />
 
                 <Button
                     android:id="@+id/account_transfer"
@@ -69,7 +79,7 @@
                     android:textColor="@android:color/white"
                     app:layout_constraintEnd_toStartOf="@+id/account_withdraw"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/account_num" />
+                    app:layout_constraintTop_toBottomOf="@+id/account_temp_2" />
 
                 <Button
                     android:id="@+id/account_withdraw"
@@ -81,7 +91,7 @@
                     android:textColor="@android:color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/account_transfer"
-                    app:layout_constraintTop_toBottomOf="@+id/account_num" />
+                    app:layout_constraintTop_toBottomOf="@+id/account_temp_2" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -9,22 +9,26 @@ import kotlinx.coroutines.withContext
 class AccountViewModel : BaseViewModel() {
     private val repository = lazy { UserRepository() }
 
-    var type = MutableLiveData<String>()
+    val type = MutableLiveData<Int>()
+    val typeStr = MutableLiveData<String>()
+    val money = MutableLiveData<Double>()
 
     init {
-        type.value = "账户"
+        typeStr.value = "账户"
+        money.value = 0.00
     }
 
     fun setType(it: Int) {
+        type.postValue(it)
         when (it) {
             1 -> {
-                type.postValue("余额")
+                typeStr.postValue("余额")
             }
             2 -> {
-                type.postValue("积分")
+                typeStr.postValue("积分")
             }
             3 -> {
-                type.postValue("佣金")
+                typeStr.postValue("佣金")
             }
         }
         go {

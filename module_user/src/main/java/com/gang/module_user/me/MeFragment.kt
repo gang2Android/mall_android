@@ -75,17 +75,17 @@ class MeFragment : BaseFragment() {
                     return@setOnItemChildClickListener
                 }
                 R.id.user_adapter_me_account_balance -> {
-                    ARouter.getInstance().build(ModuleRouter.USER_ACCOUNT_ACT)
+                    ARouter.getInstance().build(ModuleRouter.User.Account.ACTIVITY)
                         .withInt("type", 1).navigation()
                     return@setOnItemChildClickListener
                 }
                 R.id.user_adapter_me_account_integral -> {
-                    ARouter.getInstance().build(ModuleRouter.USER_ACCOUNT_ACT)
+                    ARouter.getInstance().build(ModuleRouter.User.Account.ACTIVITY)
                         .withInt("type", 2).navigation()
                     return@setOnItemChildClickListener
                 }
                 R.id.user_adapter_me_account_service -> {
-                    ARouter.getInstance().build(ModuleRouter.USER_ACCOUNT_ACT)
+                    ARouter.getInstance().build(ModuleRouter.User.Account.ACTIVITY)
                         .withInt("type", 3).navigation()
                     return@setOnItemChildClickListener
                 }

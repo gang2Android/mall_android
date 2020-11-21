@@ -30,9 +30,6 @@ object ModuleRouter {
     const val USER_PWD = "/user/pwd"
     const val USER_PWD_ACT = "/user/pwd/activity"
 
-    const val USER_ACCOUNT = "/user/account"
-    const val USER_ACCOUNT_ACT = "/user/account/activity"
-
     const val USER_ADDRESS_LIST = "/user/address/list"
     const val USER_ADDRESS_LIST_ACTIVITY = "/user/address/list/activity"
     const val USER_ADDRESS_DET = "/user/address/det"
@@ -46,5 +43,17 @@ object ModuleRouter {
     const val ORDER_AFFIRM_ACT = "/order/affirm/act"
     const val ORDER_PAY = "/order/pay"
     const val ORDER_PAY_ACT = "/order/pay/act"
+
+    object User {
+        object Account {
+            const val FRAGMENT = "/user/account"
+            const val ACTIVITY = "/user/account/activity"
+
+            object Transfer {
+                const val FRAGMENT = "/user/account/transfer"
+                const val ACTIVITY = "/user/account/transfer/activity"
+            }
+        }
+    }
 
 }

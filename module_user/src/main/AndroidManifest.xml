@@ -31,5 +31,8 @@
         <activity
             android:name=".account.AccountActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".account.transfer.TransferActivity"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>

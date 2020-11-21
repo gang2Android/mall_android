@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.alibaba.android.arouter.launcher.ARouter
 import com.gang.lib_base.LogUtils
 import com.gang.module_base.BaseFragment
 import com.gang.module_base.widget.MyDecoration
@@ -49,6 +50,9 @@ class HomeFragment : BaseFragment() {
         adapter = HomeAdapter()
         dataBinding.homeRv.adapter = adapter
 
+        dataBinding.homeSearch.setOnClickListener {
+            ARouter.getInstance().build(ModuleRouter.Goods.Search.ACTIVITY).navigation()
+        }
         viewModel.homeEntity.observe(this, object : Observer<MutableList<HomeEntity>> {
             override fun onChanged(t: MutableList<HomeEntity>?) {
                 LogUtils.print(t?.size.toString())

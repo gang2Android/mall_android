@@ -44,6 +44,18 @@ object ModuleRouter {
     const val ORDER_PAY = "/order/pay"
     const val ORDER_PAY_ACT = "/order/pay/act"
 
+    object Goods {
+        object Search {
+            const val FRAGMENT = "/goods/search"
+            const val ACTIVITY = "/goods/search/activity"
+        }
+
+        object List {
+            const val FRAGMENT = "/goods/list"
+            const val ACTIVITY = "/goods/list/activity"
+        }
+    }
+
     object User {
         object Account {
             const val FRAGMENT = "/user/account"

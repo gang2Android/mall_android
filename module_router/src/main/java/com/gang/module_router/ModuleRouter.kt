@@ -49,6 +49,11 @@ object ModuleRouter {
             const val FRAGMENT = "/user/account"
             const val ACTIVITY = "/user/account/activity"
 
+            object LOG {
+                const val FRAGMENT = "/user/account/log"
+                const val ACTIVITY = "/user/account/log/activity"
+            }
+
             object Transfer {
                 const val FRAGMENT = "/user/account/transfer"
                 const val ACTIVITY = "/user/account/transfer/activity"

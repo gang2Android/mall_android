@@ -41,6 +41,13 @@ class AccountFragment : BaseFragment() {
         dataBinding.accountTop.setOnClickListener {
             exit()
         }
+        dataBinding.accountNum.setOnClickListener {
+            viewModel.type.value?.let { it1 ->
+                ARouter.getInstance().build(ModuleRouter.User.Account.LOG.ACTIVITY)
+                    .withInt("type", it1)
+                    .navigation()
+            }
+        }
         dataBinding.accountTransfer.setOnClickListener {
             viewModel.type.value?.let { it1 ->
                 ARouter.getInstance().build(ModuleRouter.User.Account.Transfer.ACTIVITY)

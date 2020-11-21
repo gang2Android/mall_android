@@ -3,6 +3,7 @@ package com.gang.module_user
 import com.gang.lib_base.LogUtils
 import com.gang.lib_base.HttpManager
 import com.gang.module_base.BaseRepository
+import com.gang.module_user.account.log.AccountLogBean
 import com.gang.module_user.address.AddressBean
 import com.gang.module_user.address.AddressItemBean
 import com.gang.module_user.me.MeAccountBean
@@ -10,6 +11,8 @@ import com.gang.module_user.me.MeEntity
 import com.gang.module_user.me.MeExtendBean
 import com.gang.module_user.me.MeInfoBean
 import com.google.gson.Gson
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import java.lang.Exception
 
 class UserRepository : BaseRepository() {
@@ -95,4 +98,13 @@ class UserRepository : BaseRepository() {
 
     suspend fun getAccountInfo(it: Int) {
     }
+
+    suspend fun getAccountLog(page: Int): MutableList<AccountLogBean> =
+        withContext(Dispatchers.IO) {
+            val result = mutableListOf<AccountLogBean>()
+            for (i in 0..100) {
+                result.add(AccountLogBean("item$i"))
+            }
+            return@withContext result
+        }
 }

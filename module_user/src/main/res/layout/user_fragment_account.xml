@@ -52,6 +52,8 @@
                     android:id="@+id/account_num"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:padding="0dp"
                     android:text="@{vm.money.toString()}"
                     android:textColor="@android:color/black"
                     android:textSize="50sp"
@@ -63,11 +65,11 @@
                     android:id="@+id/account_temp_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="点击查看记录"
+                    android:layout_marginStart="2dp"
+                    android:text="点击查看"
                     android:textSize="10sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/account_num" />
+                    app:layout_constraintBottom_toBottomOf="@+id/account_num"
+                    app:layout_constraintStart_toEndOf="@+id/account_num" />
 
                 <Button
                     android:id="@+id/account_transfer"
@@ -79,7 +81,7 @@
                     android:textColor="@android:color/white"
                     app:layout_constraintEnd_toStartOf="@+id/account_withdraw"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/account_temp_2" />
+                    app:layout_constraintTop_toBottomOf="@+id/account_num" />
 
                 <Button
                     android:id="@+id/account_withdraw"
@@ -91,7 +93,7 @@
                     android:textColor="@android:color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/account_transfer"
-                    app:layout_constraintTop_toBottomOf="@+id/account_temp_2" />
+                    app:layout_constraintTop_toBottomOf="@+id/account_num" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

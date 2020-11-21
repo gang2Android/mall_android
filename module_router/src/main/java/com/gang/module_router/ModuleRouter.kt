@@ -53,6 +53,11 @@ object ModuleRouter {
                 const val FRAGMENT = "/user/account/transfer"
                 const val ACTIVITY = "/user/account/transfer/activity"
             }
+
+            object Withdraw {
+                const val FRAGMENT = "/user/account/withdraw"
+                const val ACTIVITY = "/user/account/withdraw/activity"
+            }
         }
     }
 

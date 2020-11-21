@@ -49,6 +49,14 @@ class AccountFragment : BaseFragment() {
                     .navigation()
             }
         }
+        dataBinding.accountWithdraw.setOnClickListener {
+            viewModel.type.value?.let { it1 ->
+                ARouter.getInstance().build(ModuleRouter.User.Account.Withdraw.ACTIVITY)
+                    .withInt("type", it1)
+                    .withDouble("money", viewModel.money.value!!)
+                    .navigation()
+            }
+        }
     }
 
     override fun initOther() {

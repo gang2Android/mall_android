@@ -3,6 +3,7 @@ package com.gang.module_goods
 import com.gang.lib_base.HttpManager
 import com.gang.module_base.BaseRepository
 import com.gang.module_goods.classify.ClassifyBean
+import com.gang.module_goods.det.DetailBean
 import com.gang.module_goods.list.ListBean
 import com.gang.module_goods.list.ListItemBean
 import com.google.gson.Gson
@@ -43,5 +44,11 @@ class GoodsRepository : BaseRepository() {
         val gson = Gson()
         val bean = gson.fromJson<ListBean>(jsonStr, ListBean::class.java)
         return@withContext bean?.list ?: mutableListOf()
+    }
+
+    suspend fun getGoodsDetail(proId: String): DetailBean = withContext(Dispatchers.IO) {
+        val result = DetailBean("商品id=${proId}")
+
+        return@withContext result
     }
 }

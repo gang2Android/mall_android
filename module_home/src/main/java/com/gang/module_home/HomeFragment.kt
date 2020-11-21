@@ -53,6 +53,17 @@ class HomeFragment : BaseFragment() {
         dataBinding.homeSearch.setOnClickListener {
             ARouter.getInstance().build(ModuleRouter.Goods.Search.ACTIVITY).navigation()
         }
+        adapter?.setOnItemClickListener { _, _, position ->
+            val item = adapter?.getItem(position) ?: return@setOnItemClickListener
+            when (item.itemType) {
+                HomeEntity.ITEM_PRO -> {
+                    val proItem = item.list ?: return@setOnItemClickListener
+                    ARouter.getInstance().build(ModuleRouter.Goods.Det.ACTIVITY)
+                        .withString("id", proItem.proid)
+                        .navigation()
+                }
+            }
+        }
         viewModel.homeEntity.observe(this, object : Observer<MutableList<HomeEntity>> {
             override fun onChanged(t: MutableList<HomeEntity>?) {
                 LogUtils.print(t?.size.toString())

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.gang.module_goods.list.ListViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/list_top"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="#FAFAFA"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/list_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:src="@drawable/icon_back" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/icon_search" />
+
+            <TextView
+                android:id="@+id/list_key"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@{vm.key}"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/list_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:padding="5dp"
+                android:src="@drawable/icon_more" />
+        </LinearLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/list_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/list_top">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

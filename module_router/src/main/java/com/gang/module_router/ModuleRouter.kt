@@ -54,6 +54,11 @@ object ModuleRouter {
             const val FRAGMENT = "/goods/list"
             const val ACTIVITY = "/goods/list/activity"
         }
+
+        object Det {
+            const val FRAGMENT = "/goods/det"
+            const val ACTIVITY = "/goods/det/activity"
+        }
     }
 
     object User {

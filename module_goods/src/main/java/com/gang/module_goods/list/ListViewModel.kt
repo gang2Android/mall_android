@@ -8,6 +8,7 @@ class ListViewModel : BaseViewModel() {
     private var repository = lazy { GoodsRepository() }
 
     val key = MutableLiveData<String>()
+    val region = MutableLiveData<Int>()
 
     var page = 1
 

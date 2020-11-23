@@ -15,10 +15,12 @@ class ListActivity : BaseActivity() {
         supportActionBar?.hide()
 
         val key = intent.getStringExtra("key") ?: ""
+        val region = intent.getIntExtra("region", 0)
 
         val fragment =
             ARouter.getInstance().build(ModuleRouter.Goods.List.FRAGMENT)
                 .withString("key", key)
+                .withInt("region", region)
                 .navigation() as Fragment
 
         supportFragmentManager.beginTransaction()

@@ -53,6 +53,50 @@ class HomeFragment : BaseFragment() {
         dataBinding.homeSearch.setOnClickListener {
             ARouter.getInstance().build(ModuleRouter.Goods.Search.ACTIVITY).navigation()
         }
+        adapter?.addChildClickViewIds(
+            R.id.home_adapter_guanggao_0,
+            R.id.home_adapter_guanggao_1,
+            R.id.home_adapter_guanggao_2,
+            R.id.home_adapter_guanggao_3
+        )
+        adapter?.setOnItemChildClickListener { _, view, position ->
+            val item = adapter?.getItem(position) ?: return@setOnItemChildClickListener
+            if (item.itemType == HomeEntity.ITEM_GUANGGAO) {
+                var type = ""
+                when (view.id) {
+                    R.id.home_adapter_guanggao_0 -> {
+                        type = item.guanggaoBanner?.get(0)?.poster_url
+                            ?: return@setOnItemChildClickListener
+
+                        type = "1"
+                    }
+                    R.id.home_adapter_guanggao_1 -> {
+                        type = item.guanggaoBanner?.get(1)?.poster_url
+                            ?: return@setOnItemChildClickListener
+
+                        type = "2"
+                    }
+                    R.id.home_adapter_guanggao_2 -> {
+                        type = item.guanggaoBanner?.get(2)?.poster_url
+                            ?: return@setOnItemChildClickListener
+
+                        type = "3"
+                    }
+                    R.id.home_adapter_guanggao_3 -> {
+                        type = item.guanggaoBanner?.get(3)?.poster_url
+                            ?: return@setOnItemChildClickListener
+
+                        type = "4"
+                    }
+                    else -> {
+                        return@setOnItemChildClickListener
+                    }
+                }
+                ARouter.getInstance().build(ModuleRouter.Goods.List.ACTIVITY)
+                    .withInt("region", type.toInt())
+                    .navigation()
+            }
+        }
         adapter?.setOnItemClickListener { _, _, position ->
             val item = adapter?.getItem(position) ?: return@setOnItemClickListener
             when (item.itemType) {

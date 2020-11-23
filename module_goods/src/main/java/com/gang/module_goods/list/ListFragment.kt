@@ -4,18 +4,22 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
+import com.gang.lib_base.LogUtils
 import com.gang.lib_base.ToastUtils
 import com.gang.module_base.BaseFragment
 import com.gang.module_base.widget.MyDecoration
 import com.gang.module_goods.R
 import com.gang.module_goods.databinding.GoodsFragmentListBinding
 import com.gang.module_router.ModuleRouter
+import com.google.android.material.tabs.TabLayout
 
 @Route(path = ModuleRouter.Goods.List.FRAGMENT)
 class ListFragment : BaseFragment() {
@@ -43,14 +47,67 @@ class ListFragment : BaseFragment() {
         decoration.setSpace(10)
         dataBinding.listRv.addItemDecoration(decoration)
 
-        adapter = ListAdapter()
+        adapter = ListAdapter(requireContext())
         dataBinding.listRv.adapter = adapter
     }
 
     override fun initListener() {
         dataBinding.listBack.setOnClickListener { exit() }
-        dataBinding.listKey.setOnClickListener { exit() }
+        dataBinding.listKey.setOnClickListener {
+            if (viewModel.key.value.toString() == "请输入关键词") {
+                ARouter.getInstance().build(ModuleRouter.Goods.Search.ACTIVITY).navigation()
+            }
+            exit()
+        }
         dataBinding.listMore.setOnClickListener { ToastUtils.show(requireContext(), "more") }
+
+        dataBinding.listRegion.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                tab ?: return
+                ToastUtils.show(requireContext(), "region=" + tab.position)
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+            }
+        })
+        dataBinding.listFilterSort.setOnClickListener {
+            dataBinding.listFilterSort.setTextColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    android.R.color.holo_red_dark
+                )
+            )
+            dataBinding.listFilterSal.setTextColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    android.R.color.black
+                )
+            )
+        }
+        dataBinding.listFilterSal.setOnClickListener {
+            dataBinding.listFilterSort.setTextColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    android.R.color.black
+                )
+            )
+            dataBinding.listFilterSal.setTextColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    android.R.color.holo_red_dark
+                )
+            )
+        }
+        dataBinding.listFilterGrid.setOnClickListener {
+            ToastUtils.show(requireContext(), "切换layout")
+//            dataBinding.listRv.layoutManager = LinearLayoutManager(requireContext())
+        }
+        dataBinding.listFilter.setOnClickListener {
+            ToastUtils.show(requireContext(), "筛选")
+        }
 
         dataBinding.listRefresh.setOnRefreshListener {
             viewModel.getData()
@@ -74,7 +131,15 @@ class ListFragment : BaseFragment() {
 
     override fun initOther() {
         arguments?.getString("key")?.let {
+            if (it == "")
+                return@let
             viewModel.key.postValue(it)
+        }
+        arguments?.getInt("region")?.let {
+            viewModel.region.postValue(it)
+
+            dataBinding.listRegion.getTabAt(it)?.select()
+
         }
         viewModel.getData()
     }

@@ -1,5 +1,7 @@
 package com.gang.module_goods.list
 
+import android.app.ActivityOptions
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +20,7 @@ import com.gang.module_base.BaseFragment
 import com.gang.module_base.widget.MyDecoration
 import com.gang.module_goods.R
 import com.gang.module_goods.databinding.GoodsFragmentListBinding
+import com.gang.module_goods.det.DetailActivity
 import com.gang.module_router.ModuleRouter
 import com.google.android.material.tabs.TabLayout
 
@@ -113,11 +116,22 @@ class ListFragment : BaseFragment() {
             viewModel.getData()
         }
 
-        adapter?.setOnItemClickListener { _, _, position ->
+        adapter?.setOnItemClickListener { _, view, position ->
             val item = adapter?.getItem(position) ?: return@setOnItemClickListener
-            ARouter.getInstance().build(ModuleRouter.Goods.Det.ACTIVITY)
-                .withString("id", item.proid)
-                .navigation()
+//            ARouter.getInstance().build(ModuleRouter.Goods.Det.ACTIVITY)
+//                .withString("id", item.proid)
+//                .navigation()
+
+            val imgView = adapter?.getViewByPosition(position,R.id.goods_adapter_list_img)
+
+            val intent = Intent(requireContext(),DetailActivity::class.java)
+            intent.putExtra("id", item.proid)
+            intent.putExtra("url",item.img)
+            val options = ActivityOptions.makeSceneTransitionAnimation(
+                requireActivity(),imgView,"111"
+            )
+            requireContext().startActivity(intent,options.toBundle())
+
         }
 
         viewModel.listData.observe(this, Observer {

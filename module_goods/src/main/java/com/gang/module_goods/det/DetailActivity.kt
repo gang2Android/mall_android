@@ -1,8 +1,10 @@
 package com.gang.module_goods.det
 
+import android.transition.Transition
 import androidx.fragment.app.Fragment
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
+import com.gang.lib_base.LogUtils
 import com.gang.module_base.BaseActivity
 import com.gang.module_goods.R
 import com.gang.module_router.ModuleRouter
@@ -20,9 +22,12 @@ class DetailActivity : BaseActivity() {
             return
         }
 
+        val url = intent.getStringExtra("url") ?: ""
+
         val fragment =
             ARouter.getInstance().build(ModuleRouter.Goods.Det.FRAGMENT)
                 .withString("id", id)
+                .withString("url", url)
                 .navigation() as Fragment
 
         supportFragmentManager.beginTransaction()

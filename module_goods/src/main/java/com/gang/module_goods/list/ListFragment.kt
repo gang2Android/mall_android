@@ -128,7 +128,7 @@ class ListFragment : BaseFragment() {
             intent.putExtra("id", item.proid)
             intent.putExtra("url",item.img)
             val options = ActivityOptions.makeSceneTransitionAnimation(
-                requireActivity(),imgView,"111"
+                requireActivity(),imgView,"img"
             )
             requireContext().startActivity(intent,options.toBundle())
 

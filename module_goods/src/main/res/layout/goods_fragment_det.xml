@@ -36,6 +36,7 @@
             android:layout_width="match_parent"
             android:src="@drawable/pro_place"
             android:layout_height="200dp"
+            android:transitionName="img"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/det_id" />
 

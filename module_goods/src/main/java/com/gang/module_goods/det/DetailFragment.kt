@@ -5,6 +5,8 @@ import android.transition.*
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.alibaba.android.arouter.facade.annotation.Route
@@ -35,6 +37,10 @@ class DetailFragment : BaseFragment() {
     }
 
     override fun initView() {
+        val width = requireContext().resources.displayMetrics.widthPixels
+        val layoutParams = ConstraintLayout.LayoutParams(width, width)
+        layoutParams.topToBottom = R.id.det_id
+        dataBinding.detImg.layoutParams = layoutParams
     }
 
     override fun initListener() {
@@ -49,10 +55,15 @@ class DetailFragment : BaseFragment() {
             requireActivity().window.sharedElementEnterTransition = TransitionSet()
                 .addTransition(ChangeImageTransform())
                 .addTransition(ChangeBounds())
+                .apply {
+                    onEnd {
+//                        ImageLoader.load(dataBinding.detImg, "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png")
+                    }
+                }
             requireActivity().window.enterTransition = Fade()
-//            requireActivity().postponeEnterTransition()
+            requireActivity().postponeEnterTransition()
             ImageLoader.load(dataBinding.detImg, it)
-//            requireActivity().startPostponedEnterTransition()
+            requireActivity().startPostponedEnterTransition()
         }
     }
 

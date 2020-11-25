@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityOptionsCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -102,9 +103,16 @@ class HomeFragment : BaseFragment() {
             when (item.itemType) {
                 HomeEntity.ITEM_PRO -> {
                     val proItem = item.list ?: return@setOnItemClickListener
+                    val imgView = adapter?.getViewByPosition(position, R.id.home_adapter_home_pro_img)
+                    val optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                        requireActivity(), imgView!!, "img"
+                    )
                     ARouter.getInstance().build(ModuleRouter.Goods.Det.ACTIVITY)
                         .withString("id", proItem.proid)
-                        .navigation()
+                        .withString("url", proItem.img)
+                        .withString("name", proItem.proname)
+                        .withOptionsCompat(optionsCompat)
+                        .navigation(requireActivity())
                 }
             }
         }

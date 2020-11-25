@@ -23,11 +23,13 @@ class DetailActivity : BaseActivity() {
         }
 
         val url = intent.getStringExtra("url") ?: ""
+        val name = intent.getStringExtra("name") ?: ""
 
         val fragment =
             ARouter.getInstance().build(ModuleRouter.Goods.Det.FRAGMENT)
                 .withString("id", id)
                 .withString("url", url)
+                .withString("name", name)
                 .navigation() as Fragment
 
         supportFragmentManager.beginTransaction()

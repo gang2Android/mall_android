@@ -38,9 +38,9 @@ class DetailFragment : BaseFragment() {
 
     override fun initView() {
         val width = requireContext().resources.displayMetrics.widthPixels
-        val layoutParams = ConstraintLayout.LayoutParams(width, width)
-        layoutParams.topToBottom = R.id.det_id
-        dataBinding.detImg.layoutParams = layoutParams
+        val imgLayoutParams = ConstraintLayout.LayoutParams(width, width)
+        imgLayoutParams.topToBottom = R.id.det_top
+        dataBinding.detImg.layoutParams = imgLayoutParams
     }
 
     override fun initListener() {
@@ -51,20 +51,22 @@ class DetailFragment : BaseFragment() {
         arguments!!.getString("id")?.let {
             viewModel.getDetail(it)
         }
-        arguments!!.getString("url")?.let {
-            requireActivity().window.sharedElementEnterTransition = TransitionSet()
-                .addTransition(ChangeImageTransform())
-                .addTransition(ChangeBounds())
-                .apply {
-                    onEnd {
+        val imgPath = arguments!!.getString("url", "")
+        val name = arguments!!.getString("name", "")
+
+        requireActivity().window.sharedElementEnterTransition = TransitionSet()
+            .addTransition(ChangeImageTransform())
+            .addTransition(ChangeBounds())
+//                .apply {
+//                    onEnd {
 //                        ImageLoader.load(dataBinding.detImg, "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png")
-                    }
-                }
-            requireActivity().window.enterTransition = Fade()
-            requireActivity().postponeEnterTransition()
-            ImageLoader.load(dataBinding.detImg, it)
-            requireActivity().startPostponedEnterTransition()
-        }
+//                    }
+//                }
+        requireActivity().window.enterTransition = Fade()
+        requireActivity().postponeEnterTransition()
+        ImageLoader.load(dataBinding.detImg, imgPath)
+        requireActivity().startPostponedEnterTransition()
+        dataBinding.detName.text = name
     }
 
 }

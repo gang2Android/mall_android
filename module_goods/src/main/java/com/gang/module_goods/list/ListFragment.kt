@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityOptionsCompat
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -118,20 +119,16 @@ class ListFragment : BaseFragment() {
 
         adapter?.setOnItemClickListener { _, view, position ->
             val item = adapter?.getItem(position) ?: return@setOnItemClickListener
-//            ARouter.getInstance().build(ModuleRouter.Goods.Det.ACTIVITY)
-//                .withString("id", item.proid)
-//                .navigation()
-
-            val imgView = adapter?.getViewByPosition(position,R.id.goods_adapter_list_img)
-
-            val intent = Intent(requireContext(),DetailActivity::class.java)
-            intent.putExtra("id", item.proid)
-            intent.putExtra("url",item.img)
-            val options = ActivityOptions.makeSceneTransitionAnimation(
-                requireActivity(),imgView,"img"
+            val imgView = adapter?.getViewByPosition(position, R.id.goods_adapter_list_img)
+            val optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                requireActivity(), imgView!!, "img"
             )
-            requireContext().startActivity(intent,options.toBundle())
-
+            ARouter.getInstance().build(ModuleRouter.Goods.Det.ACTIVITY)
+                .withString("id", item.proid)
+                .withString("url", item.img)
+                .withString("name", item.proname)
+                .withOptionsCompat(optionsCompat)
+                .navigation(requireActivity())
         }
 
         viewModel.listData.observe(this, Observer {

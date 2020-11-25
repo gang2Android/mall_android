@@ -4,11 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.annotation.ColorInt
 import androidx.appcompat.app.AppCompatActivity
-import androidx.datastore.DataStore
-import androidx.datastore.migrations.SharedPreferencesMigration
-import androidx.datastore.preferences.Preferences
-import androidx.datastore.preferences.createDataStore
-import androidx.datastore.preferences.edit
 import com.gang.lib_base.LogUtils
 
 abstract class BaseActivity : AppCompatActivity() {

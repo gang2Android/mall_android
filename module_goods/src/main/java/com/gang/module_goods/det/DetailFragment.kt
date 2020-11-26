@@ -7,11 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.gang.lib_base.ImageLoader
 import com.gang.lib_base.LogUtils
+import com.gang.lib_base.ToastUtils
 import com.gang.lib_base.onEnd
 import com.gang.module_base.BaseFragment
 import com.gang.module_goods.R
@@ -39,12 +41,38 @@ class DetailFragment : BaseFragment() {
     override fun initView() {
         val width = requireContext().resources.displayMetrics.widthPixels
         val imgLayoutParams = ConstraintLayout.LayoutParams(width, width)
-        imgLayoutParams.topToBottom = R.id.det_top
+        imgLayoutParams.topToBottom = ConstraintLayout.LayoutParams.TOP
         dataBinding.detImg.layoutParams = imgLayoutParams
     }
 
     override fun initListener() {
-        dataBinding.detTop.setOnClickListener { exit() }
+        dataBinding.detBack.setOnClickListener { exit() }
+
+        dataBinding.detScroll.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
+            LogUtils.print("scrollX=${scrollX},scrollY=${scrollY},oldScrollX=${oldScrollX},oldScrollY=${oldScrollY}")
+            if (scrollY >= 100) {
+                dataBinding.detRegion.visibility = View.VISIBLE
+                dataBinding.detTop.setBackgroundColor(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        android.R.color.white
+                    )
+                )
+            } else {
+                dataBinding.detRegion.visibility = View.INVISIBLE
+                dataBinding.detTop.setBackgroundColor(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        android.R.color.transparent
+                    )
+                )
+            }
+        }
+        dataBinding.detSpecSelect.setOnClickListener { openSpecSelect() }
+        dataBinding.detTemp4.setOnClickListener { openSpecSelect() }
+        dataBinding.detAddressSelect.setOnClickListener { openAddressSelect() }
+        dataBinding.detTemp6.setOnClickListener { openAddressSelect() }
+        dataBinding.detStore.setOnClickListener { ToastUtils.show(requireContext(), "打开商家详情") }
     }
 
     override fun initOther() {
@@ -67,6 +95,14 @@ class DetailFragment : BaseFragment() {
         ImageLoader.load(dataBinding.detImg, imgPath)
         requireActivity().startPostponedEnterTransition()
         dataBinding.detName.text = name
+    }
+
+    private fun openSpecSelect() {
+        ToastUtils.show(requireContext(), "选择规格")
+    }
+
+    private fun openAddressSelect() {
+        ToastUtils.show(requireContext(), "选择收货地址")
     }
 
 }

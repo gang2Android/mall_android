@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@android:color/white"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/goods_adapter_det_spec_temp_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="已选"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/goods_adapter_det_spec_select"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="颜色尺码红色XL"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/goods_adapter_det_spec_temp_2"
+        app:layout_constraintStart_toEndOf="@+id/goods_adapter_det_spec_temp_1"
+        app:layout_constraintTop_toTopOf="@+id/goods_adapter_det_spec_temp_1" />
+
+    <ImageView
+        android:id="@+id/goods_adapter_det_spec_temp_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/goods_adapter_det_spec_select"
+        app:layout_constraintTop_toTopOf="@+id/goods_adapter_det_spec_select" />
+
+    <TextView
+        android:id="@+id/goods_adapter_det_spec_temp_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="送至"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goods_adapter_det_spec_temp_1" />
+
+    <TextView
+        android:id="@+id/goods_adapter_det_spec_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="河南省郑州市金水区文化路9号"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/goods_adapter_det_spec_temp_4"
+        app:layout_constraintStart_toEndOf="@+id/goods_adapter_det_spec_temp_3"
+        app:layout_constraintTop_toTopOf="@+id/goods_adapter_det_spec_temp_3" />
+
+    <ImageView
+        android:id="@+id/goods_adapter_det_spec_temp_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/goods_adapter_det_spec_address"
+        app:layout_constraintTop_toTopOf="@+id/goods_adapter_det_spec_address" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

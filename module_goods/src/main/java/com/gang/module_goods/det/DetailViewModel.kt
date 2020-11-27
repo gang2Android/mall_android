@@ -8,11 +8,12 @@ class DetailViewModel : BaseViewModel() {
     private var repository = lazy { GoodsRepository() }
 
     val detailBean = MutableLiveData<DetailBean>()
+    val detailEntity = MutableLiveData<MutableList<DetailEntity>>()
 
     fun getDetail(proId: String) {
         go {
             val result = repository.value.getGoodsDetail(proId)
-            detailBean.postValue(result)
+            detailEntity.postValue(result)
         }
     }
 

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@android:color/white"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/goods_adapter_det_store_img"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/pro_place"
+        app:layout_constraintEnd_toStartOf="@+id/goods_adapter_det_store_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/goods_adapter_det_store_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="店铺名称"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/goods_adapter_det_store_img"
+        app:layout_constraintTop_toTopOf="@+id/goods_adapter_det_store_img" />
+
+    <TextView
+        android:id="@+id/goods_adapter_det_store_access"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="评价"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/goods_adapter_det_store_img"
+        app:layout_constraintStart_toStartOf="@+id/goods_adapter_det_store_name"
+        app:layout_constraintTop_toTopOf="@+id/goods_adapter_det_store_img" />
+
+    <TextView
+        android:id="@+id/goods_adapter_det_store_access_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9.9"
+        android:textColor="@color/red"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/goods_adapter_det_store_access"
+        app:layout_constraintStart_toEndOf="@+id/goods_adapter_det_store_access" />
+
+    <TextView
+        android:id="@+id/goods_adapter_det_store_log"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="物流"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/goods_adapter_det_store_access_level"
+        app:layout_constraintStart_toEndOf="@+id/goods_adapter_det_store_access_level" />
+
+    <TextView
+        android:id="@+id/goods_adapter_det_store_log_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9.9"
+        android:textColor="@color/red"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/goods_adapter_det_store_log"
+        app:layout_constraintStart_toEndOf="@+id/goods_adapter_det_store_log" />
+
+    <TextView
+        android:id="@+id/goods_adapter_det_store_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="售后"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/goods_adapter_det_store_log_level"
+        app:layout_constraintStart_toEndOf="@+id/goods_adapter_det_store_log_level" />
+
+    <TextView
+        android:id="@+id/goods_adapter_det_store_service_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9.9"
+        android:textColor="@color/red"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/goods_adapter_det_store_service"
+        app:layout_constraintStart_toEndOf="@+id/goods_adapter_det_store_service" />
+
+    <ImageView
+        android:id="@+id/goods_adapter_det_store_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_right"
+        app:layout_constraintBottom_toBottomOf="@+id/goods_adapter_det_store_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/goods_adapter_det_store_img" />
+
+    <TextView
+        android:id="@+id/goods_adapter_det_store_collect_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/goods_adapter_det_store_img"
+        app:layout_constraintStart_toStartOf="@+id/goods_adapter_det_store_name" />
+
+    <TextView
+        android:id="@+id/goods_adapter_det_store_collect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="人关注"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/goods_adapter_det_store_collect_num"
+        app:layout_constraintStart_toEndOf="@+id/goods_adapter_det_store_collect_num" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

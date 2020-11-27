@@ -9,378 +9,79 @@
             type="com.gang.module_goods.det.DetailViewModel" />
     </data>
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/white">
+        android:layout_height="match_parent">
 
-        <androidx.core.widget.NestedScrollView
-            android:id="@+id/det_scroll"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/det_rv"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fillViewport="true">
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/det_bot"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/det_bot"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/det_rv">
 
-                <ImageView
-                    android:id="@+id/det_img"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:src="@drawable/pro_place"
-                    android:transitionName="img"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/icon_collect_off"
+                android:gravity="center"
+                android:text="店铺"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                app:drawableTopCompat="@drawable/icon_collect_off" />
 
-                <TextView
-                    android:id="@+id/det_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="20dp"
-                    android:ellipsize="end"
-                    android:maxLines="2"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/det_img" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/icon_collect_off"
+                android:gravity="center"
+                android:text="客服"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                app:drawableTopCompat="@drawable/icon_collect_off" />
 
-                <TextView
-                    android:id="@+id/det_temp_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="¥"
-                    android:textColor="@color/red"
-                    android:textSize="18sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/det_price"
-                    app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/icon_collect_off"
+                android:gravity="center"
+                android:text="购物车"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                app:drawableTopCompat="@drawable/icon_collect_off" />
 
-                <TextView
-                    android:id="@+id/det_price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:includeFontPadding="false"
-                    android:text="0.00"
-                    android:textColor="@color/red"
-                    android:textSize="30sp"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/det_collect"
-                    app:layout_constraintBottom_toBottomOf="@+id/det_temp_1"
-                    app:layout_constraintStart_toEndOf="@+id/det_temp_1" />
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:backgroundTint="@color/red"
+                android:text="加入购物车"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
 
-                <TextView
-                    android:id="@+id/det_collect"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:text="收藏"
-                    app:drawableTopCompat="@drawable/icon_collect_off"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/det_name" />
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:backgroundTint="@color/colorAccent"
+                android:text="立即购买"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
 
-                <View
-                    android:id="@+id/det_temp_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:background="#fafafa"
-                    app:layout_constraintTop_toBottomOf="@+id/det_collect" />
-
-                <TextView
-                    android:id="@+id/det_temp_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:text="已选"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/det_temp_2" />
-
-                <TextView
-                    android:id="@+id/det_spec_select"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="颜色尺码红色XL"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp"
-                    app:layout_constraintEnd_toStartOf="@+id/det_temp_4"
-                    app:layout_constraintStart_toEndOf="@+id/det_temp_3"
-                    app:layout_constraintTop_toTopOf="@+id/det_temp_3" />
-
-                <ImageView
-                    android:id="@+id/det_temp_4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:src="@drawable/icon_right"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/det_spec_select"
-                    app:layout_constraintTop_toTopOf="@+id/det_spec_select" />
-
-                <TextView
-                    android:id="@+id/det_temp_5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:text="送至"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/det_temp_3" />
-
-                <TextView
-                    android:id="@+id/det_address_select"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:text="河南省郑州市金水区文化路9号"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp"
-                    app:layout_constraintEnd_toStartOf="@+id/det_temp_6"
-                    app:layout_constraintStart_toEndOf="@+id/det_temp_5"
-                    app:layout_constraintTop_toTopOf="@+id/det_temp_5" />
-
-                <ImageView
-                    android:id="@+id/det_temp_6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:src="@drawable/icon_right"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/det_address_select"
-                    app:layout_constraintTop_toTopOf="@+id/det_address_select" />
-
-                <View
-                    android:id="@+id/det_temp_7"
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:layout_marginTop="20dp"
-                    android:background="#fafafa"
-                    app:layout_constraintTop_toBottomOf="@+id/det_temp_5" />
-
-                <TextView
-                    android:id="@+id/det_temp_8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:text="评价"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/det_temp_7" />
-
-                <TextView
-                    android:id="@+id/det_access_num"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="20dp"
-                    android:text="20+"
-                    android:textColor="@android:color/black"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/det_temp_8"
-                    app:layout_constraintStart_toEndOf="@+id/det_temp_8" />
-
-                <ImageView
-                    android:id="@+id/det_temp_9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:src="@drawable/icon_right"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/det_temp_8" />
-
-                <View
-                    android:id="@+id/det_temp_10"
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:layout_marginTop="20dp"
-                    android:background="#fafafa"
-                    app:layout_constraintTop_toBottomOf="@+id/det_temp_8" />
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/det_store"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/det_temp_10">
-
-                    <ImageView
-                        android:id="@+id/det_store_img"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginEnd="20dp"
-                        android:src="@drawable/pro_place"
-                        app:layout_constraintEnd_toStartOf="@+id/det_store_name"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/det_store_name"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:text="店铺名称"
-                        android:textColor="@android:color/black"
-                        android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/det_store_img"
-                        app:layout_constraintTop_toTopOf="@+id/det_store_img" />
-
-                    <TextView
-                        android:id="@+id/det_store_access"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="评价"
-                        android:textColor="@android:color/black"
-                        android:textSize="12sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/det_store_img"
-                        app:layout_constraintStart_toStartOf="@+id/det_store_name"
-                        app:layout_constraintTop_toTopOf="@+id/det_store_img" />
-
-                    <TextView
-                        android:id="@+id/det_store_access_level"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="9.9"
-                        android:textColor="@color/red"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBaseline_toBaselineOf="@+id/det_store_access"
-                        app:layout_constraintStart_toEndOf="@+id/det_store_access" />
-
-                    <TextView
-                        android:id="@+id/det_store_log"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:text="物流"
-                        android:textColor="@android:color/black"
-                        android:textSize="12sp"
-                        app:layout_constraintBaseline_toBaselineOf="@+id/det_store_access_level"
-                        app:layout_constraintStart_toEndOf="@+id/det_store_access_level" />
-
-                    <TextView
-                        android:id="@+id/det_store_log_level"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="9.9"
-                        android:textColor="@color/red"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBaseline_toBaselineOf="@+id/det_store_log"
-                        app:layout_constraintStart_toEndOf="@+id/det_store_log" />
-
-                    <TextView
-                        android:id="@+id/det_store_service"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:text="售后"
-                        android:textColor="@android:color/black"
-                        android:textSize="12sp"
-                        app:layout_constraintBaseline_toBaselineOf="@+id/det_store_log_level"
-                        app:layout_constraintStart_toEndOf="@+id/det_store_log_level" />
-
-                    <TextView
-                        android:id="@+id/det_store_service_level"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="9.9"
-                        android:textColor="@color/red"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBaseline_toBaselineOf="@+id/det_store_service"
-                        app:layout_constraintStart_toEndOf="@+id/det_store_service" />
-
-                    <ImageView
-                        android:id="@+id/det_temp_11"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="20dp"
-                        android:src="@drawable/icon_right"
-                        app:layout_constraintBottom_toBottomOf="@+id/det_store_img"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/det_store_img" />
-
-                    <TextView
-                        android:id="@+id/det_store_collect_num"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="1"
-                        android:textColor="@android:color/black"
-                        android:textSize="12sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/det_store_img"
-                        app:layout_constraintStart_toStartOf="@+id/det_store_name" />
-
-                    <TextView
-                        android:id="@+id/det_store_collect"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="人关注"
-                        android:textColor="@android:color/black"
-                        android:textSize="12sp"
-                        app:layout_constraintBaseline_toBaselineOf="@+id/det_store_collect_num"
-                        app:layout_constraintStart_toEndOf="@+id/det_store_collect_num" />
-
-                    <View
-                        android:id="@+id/det_temp_12"
-                        android:layout_width="match_parent"
-                        android:layout_height="10dp"
-                        android:layout_marginTop="20dp"
-                        android:background="#fafafa"
-                        app:layout_constraintTop_toBottomOf="@+id/det_store_img" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <LinearLayout
-                    android:id="@+id/det_info"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/det_store">
-
-                    <WebView
-                        android:id="@+id/det_info_v"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/det_pros"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/det_info">
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/det_pro_v"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-                </LinearLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/det_top"
@@ -389,7 +90,8 @@
             android:layout_alignParentTop="true"
             android:background="@android:color/transparent"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/det_back"
@@ -448,5 +150,5 @@
 
         </LinearLayout>
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

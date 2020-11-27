@@ -4,6 +4,7 @@ import com.gang.lib_base.HttpManager
 import com.gang.module_base.BaseRepository
 import com.gang.module_goods.classify.ClassifyBean
 import com.gang.module_goods.det.DetailBean
+import com.gang.module_goods.det.DetailEntity
 import com.gang.module_goods.list.ListBean
 import com.gang.module_goods.list.ListItemBean
 import com.google.gson.Gson
@@ -46,9 +47,30 @@ class GoodsRepository : BaseRepository() {
         return@withContext bean?.list ?: mutableListOf()
     }
 
-    suspend fun getGoodsDetail(proId: String): DetailBean = withContext(Dispatchers.IO) {
-        val result = DetailBean("商品id=${proId}")
+    suspend fun getGoodsDetail(proId: String): MutableList<DetailEntity> =
+        withContext(Dispatchers.IO) {
+            val result = mutableListOf<DetailEntity>()
 
-        return@withContext result
-    }
+            val bannerItem = DetailEntity()
+            bannerItem.itemType = DetailEntity.ITEM_BANNER
+            result.add(bannerItem)
+
+            val baseItem = DetailEntity()
+            baseItem.itemType = DetailEntity.ITEM_BASE
+            result.add(baseItem)
+
+            val specItem = DetailEntity()
+            specItem.itemType = DetailEntity.ITEM_SPEC
+            result.add(specItem)
+
+            val accessItem = DetailEntity()
+            accessItem.itemType = DetailEntity.ITEM_ACCESS
+            result.add(accessItem)
+
+            val storeItem = DetailEntity()
+            storeItem.itemType = DetailEntity.ITEM_STORE
+            result.add(storeItem)
+
+            return@withContext result
+        }
 }

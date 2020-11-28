@@ -24,6 +24,7 @@ import com.gang.module_base.BaseFragment
 import com.gang.module_goods.R
 import com.gang.module_goods.databinding.GoodsFragmentDetBinding
 import com.gang.module_goods.det.adapter.DetailAdapter
+import com.gang.module_goods.det.address.AddressFragment
 import com.gang.module_goods.det.spec.SpecFragment
 import com.gang.module_router.ModuleRouter
 import com.google.android.material.tabs.TabLayout
@@ -192,7 +193,9 @@ class DetailFragment : BaseFragment() {
     }
 
     private fun openAddressSelect() {
-        ToastUtils.show(requireContext(), "选择收货地址")
+        val ft = requireActivity().supportFragmentManager.beginTransaction()
+        val aa = AddressFragment()
+        aa.show(ft, "111")
     }
 
 }

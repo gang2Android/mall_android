@@ -12,7 +12,14 @@ class DetailEntity {
         const val ITEM_ACCESS = 5
         const val ITEM_STORE = 6
         const val ITEM_INFO = 7
+        const val ITEM_RECOMMEND = 8
     }
 
     var itemType = ITEM_BANNER
+
+    var recommend: MutableList<DetailRecommendBean>? = null
 }
+
+data class DetailRecommendBean(
+    val id: String
+)

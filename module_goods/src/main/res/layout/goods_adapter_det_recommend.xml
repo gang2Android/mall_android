@@ -7,16 +7,18 @@
     android:orientation="vertical">
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:text="图文详情"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="推荐商品"
         android:textColor="@android:color/black"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textStyle="bold" />
 
-    <WebView
-        android:id="@+id/goods_adapter_det_info"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/goods_adapter_det_recommend_rv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent" />
 </LinearLayout>

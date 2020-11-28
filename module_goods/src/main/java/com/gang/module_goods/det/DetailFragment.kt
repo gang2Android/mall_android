@@ -84,17 +84,25 @@ class DetailFragment : BaseFragment() {
         })
         dataBinding.detRegion.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                when(tab!!.position){
-                    0->{
+                when (tab!!.position) {
+                    0 -> {
                         dataBinding.detRv.smoothScrollToPosition(0)
                     }
-                    1->{
+                    1 -> {
                         dataBinding.detRv.smoothScrollToPosition(3)
                     }
-                    2->{
-                        dataBinding.detRv.smoothScrollToPosition(5)
+                    2 -> {
+                        dataBinding.detRv.smoothScrollToPosition(6)
                     }
-                    3->{}
+                    3 -> {
+                        val layoutManager = dataBinding.detRv.layoutManager as LinearLayoutManager
+                        val firstItemPosition = layoutManager.findFirstVisibleItemPosition()
+                        if (firstItemPosition == 5) {
+                            dataBinding.detRv.smoothScrollToPosition(4)
+                        } else {
+                            dataBinding.detRv.smoothScrollToPosition(5)
+                        }
+                    }
                 }
             }
 
@@ -115,8 +123,6 @@ class DetailFragment : BaseFragment() {
         val layoutManager = dataBinding.detRv.layoutManager as LinearLayoutManager
         val firstVisibleItem = dataBinding.detRv.getChildAt(0)
         val firstItemPosition = layoutManager.findFirstVisibleItemPosition()
-//        val itemCount = layoutManager.itemCount
-//        val recycleViewHeight = dataBinding.detRv.height
         val itemHeight = firstVisibleItem.height
         val firstItemBottom = layoutManager.getDecoratedBottom(firstVisibleItem)
         return (firstItemPosition + 1) * itemHeight - firstItemBottom

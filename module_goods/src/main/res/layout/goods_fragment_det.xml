@@ -34,34 +34,34 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:drawableTop="@drawable/icon_collect_off"
+                android:drawableTop="@drawable/icon_store"
                 android:gravity="center"
                 android:text="店铺"
                 android:textColor="@android:color/black"
                 android:textSize="12sp"
-                app:drawableTopCompat="@drawable/icon_collect_off" />
+                app:drawableTopCompat="@drawable/icon_store" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:drawableTop="@drawable/icon_collect_off"
+                android:drawableTop="@drawable/icon_service"
                 android:gravity="center"
                 android:text="客服"
                 android:textColor="@android:color/black"
                 android:textSize="12sp"
-                app:drawableTopCompat="@drawable/icon_collect_off" />
+                app:drawableTopCompat="@drawable/icon_service" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:drawableTop="@drawable/icon_collect_off"
+                android:drawableTop="@drawable/icon_cart"
                 android:gravity="center"
                 android:text="购物车"
                 android:textColor="@android:color/black"
                 android:textSize="12sp"
-                app:drawableTopCompat="@drawable/icon_collect_off" />
+                app:drawableTopCompat="@drawable/icon_cart" />
 
             <Button
                 android:layout_width="0dp"

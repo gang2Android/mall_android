@@ -5,6 +5,7 @@ import com.gang.module_base.BaseRepository
 import com.gang.module_goods.classify.ClassifyBean
 import com.gang.module_goods.det.DetailBean
 import com.gang.module_goods.det.DetailEntity
+import com.gang.module_goods.det.DetailRecommendBean
 import com.gang.module_goods.list.ListBean
 import com.gang.module_goods.list.ListItemBean
 import com.google.gson.Gson
@@ -70,6 +71,15 @@ class GoodsRepository : BaseRepository() {
             val storeItem = DetailEntity()
             storeItem.itemType = DetailEntity.ITEM_STORE
             result.add(storeItem)
+
+            val recommendItem = DetailEntity()
+            recommendItem.itemType = DetailEntity.ITEM_RECOMMEND
+            val recommend = mutableListOf<DetailRecommendBean>()
+            for (i in 0..10) {
+                recommend.add(DetailRecommendBean("id=$i"))
+            }
+            recommendItem.recommend = recommend
+            result.add(recommendItem)
 
             val infoItem = DetailEntity()
             infoItem.itemType = DetailEntity.ITEM_INFO

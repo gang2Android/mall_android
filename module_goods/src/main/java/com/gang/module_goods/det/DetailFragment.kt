@@ -24,6 +24,7 @@ import com.gang.module_base.BaseFragment
 import com.gang.module_goods.R
 import com.gang.module_goods.databinding.GoodsFragmentDetBinding
 import com.gang.module_goods.det.adapter.DetailAdapter
+import com.gang.module_goods.det.spec.SpecFragment
 import com.gang.module_router.ModuleRouter
 import com.google.android.material.tabs.TabLayout
 
@@ -113,6 +114,37 @@ class DetailFragment : BaseFragment() {
             }
         })
 
+        adapter?.addChildClickViewIds(
+            R.id.goods_adapter_det_spec_select,
+            R.id.goods_adapter_det_spec_address
+        )
+        adapter?.setOnItemChildClickListener { _, view, position ->
+            when (view.id) {
+                R.id.goods_adapter_det_spec_select -> {
+                    openSpecSelect()
+                }
+                R.id.goods_adapter_det_spec_address -> {
+                    openAddressSelect()
+                }
+            }
+        }
+//        adapter?.setOnItemClickListener { _, _, position ->
+//            val item = adapter?.getItem(position) ?: return@setOnItemClickListener
+//            when (item.itemType) {
+//                DetailEntity.ITEM_BANNER -> {
+//                }
+//                DetailEntity.ITEM_BASE -> {
+//                }
+//                DetailEntity.ITEM_SPEC -> {
+//
+//                }
+//                DetailEntity.ITEM_ACCESS -> {
+//                }
+//                DetailEntity.ITEM_STORE -> {
+//                }
+//            }
+//        }
+
         viewModel.detailEntity.observe(this, Observer {
             adapter?.setNewInstance(it)
         })
@@ -154,7 +186,9 @@ class DetailFragment : BaseFragment() {
     }
 
     private fun openSpecSelect() {
-        ToastUtils.show(requireContext(), "选择规格")
+        val ft = requireActivity().supportFragmentManager.beginTransaction()
+        val aa = SpecFragment()
+        aa.show(ft, "111")
     }
 
     private fun openAddressSelect() {

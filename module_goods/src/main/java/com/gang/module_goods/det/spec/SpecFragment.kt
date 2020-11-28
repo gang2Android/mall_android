@@ -6,6 +6,7 @@ import android.view.*
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.gang.lib_base.LogUtils
 import com.gang.module_goods.R
 
 
@@ -69,6 +70,12 @@ class SpecFragment : DialogFragment() {
         data.add(SpecBean("id2"))
         data.add(SpecBean("id3"))
         adapter?.setNewInstance(data)
+
+        adapter?.setCallBack(object : SpecCallBack {
+            override fun tagCall(adapterPosition: Int, tagPosition: Int) {
+                LogUtils.print("tagCall-adapterPosition=${adapterPosition},tagPosition=${tagPosition}")
+            }
+        })
     }
 
 }

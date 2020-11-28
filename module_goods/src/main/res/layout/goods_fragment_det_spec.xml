@@ -75,8 +75,61 @@
         android:id="@+id/spec_rv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/spec_cart"
+        app:layout_constraintBottom_toTopOf="@+id/spec_temp_2"
         app:layout_constraintTop_toBottomOf="@+id/spec_img" />
+
+    <TextView
+        android:id="@+id/spec_temp_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:text="数量"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/spec_cart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spec_rv" />
+
+    <TextView
+        android:id="@+id/spec_temp_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="库存"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spec_temp_2"
+        app:layout_constraintStart_toEndOf="@+id/spec_temp_2"
+        app:layout_constraintTop_toTopOf="@+id/spec_temp_2" />
+
+    <TextView
+        android:id="@+id/spec_stock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spec_temp_3"
+        app:layout_constraintStart_toEndOf="@+id/spec_temp_3"
+        app:layout_constraintTop_toTopOf="@+id/spec_temp_3" />
+
+    <TextView
+        android:id="@+id/spec_temp_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="件"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spec_stock"
+        app:layout_constraintStart_toEndOf="@+id/spec_stock"
+        app:layout_constraintTop_toTopOf="@+id/spec_stock" />
+
+    <com.gang.module_base.widget.AmountView
+        android:id="@+id/spec_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spec_temp_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spec_temp_2" />
 
     <Button
         android:id="@+id/spec_cart"
@@ -89,7 +142,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/spec_buy"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spec_rv" />
+        app:layout_constraintTop_toBottomOf="@+id/spec_temp_2" />
 
     <Button
         android:id="@+id/spec_buy"
@@ -102,6 +155,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/spec_cart"
-        app:layout_constraintTop_toBottomOf="@+id/spec_rv" />
+        app:layout_constraintTop_toTopOf="@+id/spec_cart" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

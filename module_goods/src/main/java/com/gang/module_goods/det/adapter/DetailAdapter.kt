@@ -11,6 +11,7 @@ class DetailAdapter : BaseProviderMultiAdapter<DetailEntity>() {
         addItemProvider(DetailSpecProvider())
         addItemProvider(DetailAccessProvider())
         addItemProvider(DetailStoreProvider())
+        addItemProvider(DetailInfoProvider())
     }
 
     override fun getItemType(data: List<DetailEntity>, position: Int): Int {

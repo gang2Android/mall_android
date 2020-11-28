@@ -91,7 +91,9 @@ class DetailFragment : BaseFragment() {
                     1->{
                         dataBinding.detRv.smoothScrollToPosition(3)
                     }
-                    2->{}
+                    2->{
+                        dataBinding.detRv.smoothScrollToPosition(5)
+                    }
                     3->{}
                 }
             }

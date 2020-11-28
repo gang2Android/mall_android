@@ -71,6 +71,10 @@ class GoodsRepository : BaseRepository() {
             storeItem.itemType = DetailEntity.ITEM_STORE
             result.add(storeItem)
 
+            val infoItem = DetailEntity()
+            infoItem.itemType = DetailEntity.ITEM_INFO
+            result.add(infoItem)
+
             return@withContext result
         }
 }

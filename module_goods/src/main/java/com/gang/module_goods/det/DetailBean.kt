@@ -11,6 +11,7 @@ class DetailEntity {
         const val ITEM_SPEC = 3
         const val ITEM_ACCESS = 5
         const val ITEM_STORE = 6
+        const val ITEM_INFO = 7
     }
 
     var itemType = ITEM_BANNER

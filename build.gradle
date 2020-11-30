@@ -27,6 +27,7 @@ ext {
     google_material = "1.2.1"
     swiperefreshlayout = "1.1.0"
     viewpager2 = "1.0.0"
+    datastore_preferences = "1.0.0-alpha04"
 
 
     arouter_version = "1.5.1"

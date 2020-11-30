@@ -10,12 +10,15 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
+import com.gang.lib_base.DataUtils
 import com.gang.lib_base.ToastUtils
 import com.gang.module_base.BaseFragment
 import com.gang.module_base.StatusBarUtils
 import com.gang.module_router.ModuleRouter
 import com.gang.module_user.R
 import com.gang.module_user.databinding.UserFragmentLoginBinding
+import kotlinx.coroutines.flow.map
+import java.util.prefs.Preferences
 
 @Route(path = ModuleRouter.USER_LOGIN)
 class LoginFragment : BaseFragment() {

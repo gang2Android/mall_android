@@ -1,5 +1,7 @@
 package com.gang.lib_base
 
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.content.Context
 
 object AppUtils {
@@ -18,4 +20,9 @@ object AppUtils {
         }
     }
 
+    fun copyText(context: Context, txt: String) {
+        val cm = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        val cd = ClipData.newPlainText("Label", txt)
+        cm.setPrimaryClip(cd)
+    }
 }

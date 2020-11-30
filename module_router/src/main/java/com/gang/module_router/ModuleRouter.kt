@@ -83,4 +83,11 @@ object ModuleRouter {
         }
     }
 
+    object Pub {
+        object H5 {
+            const val FRAGMENT = "/pub/h5/"
+            const val ACTIVITY = "/pub/h5/activity"
+        }
+    }
+
 }

@@ -1,3 +1,4 @@
+include ':module_pub'
 include ':module_order'
 include ':module_user'
 include ':module_cart'

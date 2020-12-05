@@ -1,9 +1,11 @@
 package com.gang.module_user.address
 
+import androidx.paging.PagedList
 import java.io.Serializable
 
 data class AddressBean(
-    val addresslist: MutableList<AddressItemBean>
+    val addresslist: MutableList<AddressItemBean>,
+    val addresslistP: PagedList<AddressItemBean>
 )
 
 data class AddressItemBean(

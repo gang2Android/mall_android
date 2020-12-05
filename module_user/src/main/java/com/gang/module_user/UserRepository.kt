@@ -1,11 +1,14 @@
 package com.gang.module_user
 
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
 import com.gang.lib_base.LogUtils
 import com.gang.lib_base.HttpManager
 import com.gang.module_base.BaseRepository
 import com.gang.module_user.account.log.AccountLogBean
 import com.gang.module_user.address.AddressBean
 import com.gang.module_user.address.AddressItemBean
+import com.gang.module_user.address.listpaging.AddressDataSource
 import com.gang.module_user.me.MeAccountBean
 import com.gang.module_user.me.MeEntity
 import com.gang.module_user.me.MeExtendBean
@@ -84,6 +87,10 @@ class UserRepository : BaseRepository() {
             throw Exception("数据异常")
         return addressBean.addresslist
     }
+
+    fun getAddressList() = Pager(PagingConfig(pageSize = 20)) {
+        AddressDataSource()
+    }.flow
 
     fun saveAddress(item: AddressItemBean) {
         if (item.ReceiveName == "")

@@ -70,6 +70,8 @@ dependencies {
     api project(path: ':module_base')
     api project(path: ':module_router')
 
+    api project(path: ':module_login')
+
     implementation ("com.alibaba:arouter-api:$rootProject.ext.arouter_version"){
         exclude module:"fragment"
     }

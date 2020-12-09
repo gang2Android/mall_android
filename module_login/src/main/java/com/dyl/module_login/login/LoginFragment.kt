@@ -1,4 +1,4 @@
-package com.gang.module_user.login
+package com.dyl.module_login.login
 
 import android.graphics.Color
 import android.os.Bundle
@@ -10,19 +10,19 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
+import com.dyl.module_login.R
+import com.dyl.module_login.databinding.LoginFragmentLoginBinding
 import com.gang.lib_base.DataUtils
 import com.gang.lib_base.ToastUtils
 import com.gang.module_base.BaseFragment
 import com.gang.module_base.StatusBarUtils
 import com.gang.module_router.ModuleRouter
-import com.gang.module_user.R
-import com.gang.module_user.databinding.UserFragmentLoginBinding
 import kotlinx.coroutines.flow.map
 import java.util.prefs.Preferences
 
-@Route(path = ModuleRouter.USER_LOGIN)
+@Route(path = ModuleRouter.Login.Login.FRAGMENT)
 class LoginFragment : BaseFragment() {
-    lateinit var dataBinding: UserFragmentLoginBinding
+    lateinit var dataBinding: LoginFragmentLoginBinding
     lateinit var viewModel: LoginViewModel
 
     override fun getRootView(
@@ -31,7 +31,7 @@ class LoginFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View {
         dataBinding =
-            DataBindingUtil.inflate(inflater, R.layout.user_fragment_login, container, false)
+            DataBindingUtil.inflate(inflater, R.layout.login_fragment_login, container, false)
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
         dataBinding.vm = viewModel
@@ -52,13 +52,13 @@ class LoginFragment : BaseFragment() {
                 }
             }
         })
-        dataBinding.userLoginClose.setOnClickListener {
+        dataBinding.loginLoginClose.setOnClickListener {
             requireActivity().finish()
         }
-        dataBinding.userLoginReg.setOnClickListener {
-            ARouter.getInstance().build(ModuleRouter.USER_REG_ACTIVITY).navigation()
+        dataBinding.loginLoginReg.setOnClickListener {
+            ARouter.getInstance().build(ModuleRouter.Login.Reg.ACTIVITY).navigation()
         }
-        dataBinding.userLoginOk.setOnClickListener {
+        dataBinding.loginLoginOk.setOnClickListener {
             viewModel.login()
         }
     }

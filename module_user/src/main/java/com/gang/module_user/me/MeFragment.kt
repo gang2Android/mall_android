@@ -71,7 +71,7 @@ class MeFragment : BaseFragment() {
             var type = 0
             when (view.id) {
                 R.id.user_adapter_me_top_img -> {
-                    ARouter.getInstance().build(ModuleRouter.USER_LOGIN_ACTIVITY).navigation()
+                    ARouter.getInstance().build(ModuleRouter.Login.Login.ACTIVITY).navigation()
                     return@setOnItemChildClickListener
                 }
                 R.id.user_adapter_me_account_balance -> {

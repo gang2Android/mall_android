@@ -1,16 +1,13 @@
-package com.gang.module_user.login
+package com.dyl.module_login.login
 
 import androidx.lifecycle.MutableLiveData
+import com.dyl.module_login.LoginRepository
 import com.gang.lib_base.LogUtils
-import com.gang.lib_base.ToastUtils
 import com.gang.module_base.BaseViewModel
-import com.gang.module_user.UserRepository
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 import java.lang.Exception
 
 class LoginViewModel : BaseViewModel() {
-    private val repository = lazy { UserRepository() }
+    private val repository = lazy { LoginRepository() }
 
     val name = MutableLiveData<String>()
     val pwd = MutableLiveData<String>()

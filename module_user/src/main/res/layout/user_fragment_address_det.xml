@@ -164,7 +164,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="50dp"
             android:layout_marginEnd="20dp"
-            android:background="@drawable/user_login_btn_on"
+            android:background="@drawable/user_btn_on"
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
             android:text="确定"

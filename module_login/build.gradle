@@ -1,7 +1,9 @@
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -17,6 +19,16 @@ android {
         consumerProguardFiles "consumer-rules.pro"
     }
 
+    sourceSets {
+        main {
+            if (isDebug.toBoolean()) {
+                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                java { exclude 'debug/**' }
+            }
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -33,7 +45,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = '1.8'
     }
 }
 
@@ -44,7 +56,8 @@ kapt {
 }
 
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$rootProject.ext.kotlin_version"
     implementation "androidx.core:core-ktx:$rootProject.ext.core_ktx"
     implementation "androidx.appcompat:appcompat:$rootProject.ext.appcompat"
@@ -55,8 +68,6 @@ dependencies {
 
     api project(path: ':module_base')
     api project(path: ':module_router')
-
-    api project(path: ':module_login')
 
     implementation ("com.alibaba:arouter-api:$rootProject.ext.arouter_version"){
         exclude module:"fragment"

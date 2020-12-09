@@ -1,13 +1,11 @@
-package com.gang.module_user.reg
+package com.dyl.module_login.reg
 
 import androidx.lifecycle.MutableLiveData
+import com.dyl.module_login.LoginRepository
 import com.gang.module_base.BaseViewModel
-import com.gang.module_user.UserRepository
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 
 class RegViewModel : BaseViewModel() {
-    private val repository = lazy { UserRepository() }
+    private val repository = lazy { LoginRepository() }
 
     val name = MutableLiveData<String>()
     val mobile = MutableLiveData<String>()

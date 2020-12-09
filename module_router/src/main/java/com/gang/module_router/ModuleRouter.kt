@@ -15,11 +15,11 @@ object ModuleRouter {
 
     const val USER_ME = "/user/me"
 
-    const val USER_LOGIN = "/user/login"
-    const val USER_LOGIN_ACTIVITY = "/user/login/activity"
+//    const val USER_LOGIN = "/user/login"
+//    const val USER_LOGIN_ACTIVITY = "/user/login/activity"
 
-    const val USER_REG = "/user/reg"
-    const val USER_REG_ACTIVITY = "/user/reg/activity"
+//    const val USER_REG = "/user/reg"
+//    const val USER_REG_ACTIVITY = "/user/reg/activity"
 
     const val USER_SHARE = "/user/share"
     const val USER_SHARE_ACT = "/user/share/activity"
@@ -88,6 +88,18 @@ object ModuleRouter {
         object H5 {
             const val FRAGMENT = "/pub/h5/"
             const val ACTIVITY = "/pub/h5/activity"
+        }
+    }
+
+    object Login {
+        object Login {
+            const val FRAGMENT = "/login/login"
+            const val ACTIVITY = "/login/login/activity"
+        }
+
+        object Reg {
+            const val FRAGMENT = "/login/reg"
+            const val ACTIVITY = "/login/reg/activity"
         }
     }
 

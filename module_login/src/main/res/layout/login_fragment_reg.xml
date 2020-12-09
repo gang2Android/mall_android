@@ -6,7 +6,7 @@
 
         <variable
             name="vm"
-            type="com.dyl.module_login.reg.RegViewModel" />
+            type="com.gang.module_login.reg.RegViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

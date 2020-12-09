@@ -1,4 +1,4 @@
-package com.dyl.module_login
+package com.gang.module_login
 
 class UserBean(var mem_token: String, var token: String)
 

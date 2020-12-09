@@ -1,4 +1,4 @@
-package com.dyl.module_login
+package com.gang.module_login
 
 import com.gang.lib_base.HttpManager
 import com.gang.lib_base.LogUtils

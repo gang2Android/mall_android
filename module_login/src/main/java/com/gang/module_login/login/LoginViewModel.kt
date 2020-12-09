@@ -1,7 +1,7 @@
-package com.dyl.module_login.login
+package com.gang.module_login.login
 
 import androidx.lifecycle.MutableLiveData
-import com.dyl.module_login.LoginRepository
+import com.gang.module_login.LoginRepository
 import com.gang.lib_base.LogUtils
 import com.gang.module_base.BaseViewModel
 import java.lang.Exception

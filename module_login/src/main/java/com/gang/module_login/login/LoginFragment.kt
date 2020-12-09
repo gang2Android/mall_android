@@ -1,4 +1,4 @@
-package com.dyl.module_login.login
+package com.gang.module_login.login
 
 import android.graphics.Color
 import android.os.Bundle
@@ -10,15 +10,12 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
-import com.dyl.module_login.R
-import com.dyl.module_login.databinding.LoginFragmentLoginBinding
-import com.gang.lib_base.DataUtils
+import com.gang.module_login.databinding.LoginFragmentLoginBinding
+import com.gang.module_login.R
 import com.gang.lib_base.ToastUtils
 import com.gang.module_base.BaseFragment
 import com.gang.module_base.StatusBarUtils
 import com.gang.module_router.ModuleRouter
-import kotlinx.coroutines.flow.map
-import java.util.prefs.Preferences
 
 @Route(path = ModuleRouter.Login.Login.FRAGMENT)
 class LoginFragment : BaseFragment() {

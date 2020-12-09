@@ -1,7 +1,7 @@
-package com.dyl.module_login.reg
+package com.gang.module_login.reg
 
 import androidx.lifecycle.MutableLiveData
-import com.dyl.module_login.LoginRepository
+import com.gang.module_login.LoginRepository
 import com.gang.module_base.BaseViewModel
 
 class RegViewModel : BaseViewModel() {

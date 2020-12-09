@@ -1,4 +1,4 @@
-package com.dyl.module_login.reg
+package com.gang.module_login.reg
 
 import android.graphics.Color
 import android.os.Bundle
@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.dyl.module_login.R
-import com.dyl.module_login.databinding.LoginFragmentRegBinding
+import com.gang.module_login.R
+import com.gang.module_login.databinding.LoginFragmentRegBinding
 import com.gang.module_base.BaseFragment
 import com.gang.module_base.StatusBarUtils
 import com.gang.module_router.ModuleRouter

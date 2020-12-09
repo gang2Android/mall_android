@@ -9,7 +9,7 @@
 
         <variable
             name="vm"
-            type="com.dyl.module_login.login.LoginViewModel" />
+            type="com.gang.module_login.login.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -1,11 +1,10 @@
-package com.dyl.module_pub.h5
+package com.gang.module_pub.h5
 
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebChromeClient
@@ -14,8 +13,8 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.databinding.DataBindingUtil
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.dyl.module_pub.R
-import com.dyl.module_pub.databinding.PubFragmentH5Binding
+import com.gang.module_pub.R
+import com.gang.module_pub.databinding.PubFragmentH5Binding
 import com.gang.lib_base.AppUtils
 import com.gang.lib_base.LogUtils
 import com.gang.lib_base.ToastUtils

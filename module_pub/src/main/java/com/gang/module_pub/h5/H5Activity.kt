@@ -1,9 +1,9 @@
-package com.dyl.module_pub.h5
+package com.gang.module_pub.h5
 
 import androidx.fragment.app.Fragment
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
-import com.dyl.module_pub.R
+import com.gang.module_pub.R
 import com.gang.module_base.BaseActivity
 import com.gang.module_router.ModuleRouter
 

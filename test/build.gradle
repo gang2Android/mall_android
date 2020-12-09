@@ -15,6 +15,12 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        if (isDebug.toBoolean()) {
+            manifestPlaceholders = [firstActivity: ".MainActivity", firstTheme: "@style/AppTheme"]
+        } else {
+            manifestPlaceholders = [firstActivity: "com.gang.module_main.sp.SplashActivity", firstTheme: "@style/SplashTheme"]
+        }
     }
 
     buildTypes {
@@ -23,7 +29,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    buildFeatures{
+    buildFeatures {
         dataBinding = true
         // for view binding :
         // viewBinding = true
@@ -61,8 +67,8 @@ dependencies {
         implementation project(path: ':module_user')
         implementation project(path: ':module_order')
     }
-    implementation ("com.alibaba:arouter-api:$rootProject.ext.arouter_version"){
-        exclude module:"fragment"
+    implementation("com.alibaba:arouter-api:$rootProject.ext.arouter_version") {
+        exclude module: "fragment"
     }
     kapt "com.alibaba:arouter-compiler:$rootProject.ext.arouter_version"
 }

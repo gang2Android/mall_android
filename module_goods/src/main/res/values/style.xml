@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="SpecAnimation" parent="android:Animation">
-        <item name="android:windowEnterAnimation">@anim/goods_enter_anim</item>
-        <item name="android:windowExitAnimation">@anim/goods_exit_anim</item>
-    </style>
-</resources>

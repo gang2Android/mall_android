@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebChromeClient
+import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.databinding.DataBindingUtil
@@ -16,6 +17,7 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.dyl.module_pub.R
 import com.dyl.module_pub.databinding.PubFragmentH5Binding
 import com.gang.lib_base.AppUtils
+import com.gang.lib_base.LogUtils
 import com.gang.lib_base.ToastUtils
 import com.gang.module_base.BaseFragment
 import com.gang.module_router.ModuleRouter
@@ -38,6 +40,7 @@ class H5Fragment : BaseFragment() {
         dataBinding.h5Top.setNavigationOnClickListener { exit() }
         val settings = dataBinding.h5Web.settings
         settings.javaScriptEnabled = true
+        settings.cacheMode = WebSettings.LOAD_DEFAULT
     }
 
     override fun initListener() {
@@ -55,6 +58,13 @@ class H5Fragment : BaseFragment() {
         dataBinding.h5Web.webChromeClient = object : WebChromeClient() {
             override fun onProgressChanged(view: WebView?, newProgress: Int) {
                 super.onProgressChanged(view, newProgress)
+                LogUtils.print("pro=${newProgress}")
+                if (newProgress == 100) {
+                    dataBinding.h5Progress.visibility = View.GONE
+                } else {
+                    dataBinding.h5Progress.visibility = View.VISIBLE
+                }
+                dataBinding.h5Progress.progress = newProgress
             }
         }
         dataBinding.h5Top.setOnMenuItemClickListener {

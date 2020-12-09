@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="login_app_name">Gang2020-user</string>
+    <string name="login_app_name">Gang2020-login</string>
 
     <string name="login_login_title">会员登录</string>
     <string name="login_login_desc">未注册的手机号登录成功后将自动注册</string>

@@ -4,9 +4,9 @@
 
     <application>
         <activity
-            android:name=".test.MainActivity"
-            android:screenOrientation="portrait"
-            android:label="@string/title_activity_main"/>
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ad.AdvertActivity"
             android:screenOrientation="portrait" />
@@ -14,7 +14,7 @@
             android:name=".guide.GuideActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MainActivity"
+            android:name=".sp.SplashActivity"
             android:screenOrientation="portrait" />
     </application>
 

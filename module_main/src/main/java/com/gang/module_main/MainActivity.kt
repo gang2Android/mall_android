@@ -52,10 +52,11 @@ class MainActivity : BaseActivity() {
     fun showHome() {
         val tran = supportFragmentManager.beginTransaction()
         if (homeFragment == null) {
-            homeFragment =
+            val fragment =
                 ARouter.getInstance().build(ModuleRouter.HOME_INDEX)
                     .withString("name", "home")
-                    .navigation() as Fragment
+                    .navigation() ?: return
+            homeFragment = fragment as Fragment
             tran.add(R.id.fragment, homeFragment!!)
         }
 //        homeFragment?.let {
@@ -77,9 +78,9 @@ class MainActivity : BaseActivity() {
     fun showClassify() {
         val tran = supportFragmentManager.beginTransaction()
         if (classifyFragment == null) {
-            classifyFragment =
-                ARouter.getInstance().build(ModuleRouter.GOODS_CLASSIFY)
-                    .navigation() as Fragment
+            val fragment =
+                ARouter.getInstance().build(ModuleRouter.GOODS_CLASSIFY).navigation() ?: return
+            classifyFragment = fragment as Fragment
             tran.add(R.id.fragment, classifyFragment!!)
         }
         homeFragment?.let {
@@ -101,9 +102,9 @@ class MainActivity : BaseActivity() {
     fun showCart() {
         val tran = supportFragmentManager.beginTransaction()
         if (cartFragment == null) {
-            cartFragment =
-                ARouter.getInstance().build(ModuleRouter.CART_INDEX)
-                    .navigation() as Fragment
+            val fragment =
+                ARouter.getInstance().build(ModuleRouter.CART_INDEX).navigation() ?: return
+            cartFragment = fragment as Fragment
             tran.add(R.id.fragment, cartFragment!!)
         }
         homeFragment?.let {
@@ -125,9 +126,8 @@ class MainActivity : BaseActivity() {
     fun showUser() {
         val tran = supportFragmentManager.beginTransaction()
         if (userFragment == null) {
-            userFragment =
-                ARouter.getInstance().build(ModuleRouter.USER_ME)
-                    .navigation() as Fragment
+            val fragment = ARouter.getInstance().build(ModuleRouter.USER_ME).navigation() ?: return
+            userFragment = fragment as Fragment
             tran.add(R.id.fragment, userFragment!!)
         }
         homeFragment?.let {

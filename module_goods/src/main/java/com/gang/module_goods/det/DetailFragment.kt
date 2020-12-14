@@ -1,14 +1,11 @@
 package com.gang.module_goods.det
 
-import android.os.Build
 import android.os.Bundle
-import android.transition.*
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.webkit.WebSettings
 import android.widget.LinearLayout
-import androidx.constraintlayout.widget.ConstraintLayout
+import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -16,10 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.gang.lib_base.ImageLoader
 import com.gang.lib_base.LogUtils
-import com.gang.lib_base.ToastUtils
-import com.gang.lib_base.onEnd
 import com.gang.module_base.BaseFragment
 import com.gang.module_goods.R
 import com.gang.module_goods.databinding.GoodsFragmentDetBinding
@@ -84,6 +78,9 @@ class DetailFragment : BaseFragment() {
 
             }
         })
+        dataBinding.detRegion.post {
+            setTabLayout(dataBinding.detRegion)
+        }
         dataBinding.detRegion.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 when (tab!!.position) {
@@ -150,6 +147,25 @@ class DetailFragment : BaseFragment() {
             adapter?.setNewInstance(it)
         })
 
+    }
+
+    private fun setTabLayout(tabLayout: TabLayout) {
+        val slidingTabIndicatorField =
+            tabLayout.javaClass.getDeclaredField("slidingTabIndicator")
+        slidingTabIndicatorField.isAccessible = true
+        val mTabStrip = slidingTabIndicatorField.get(tabLayout) as LinearLayout
+        val width = tabLayout.width / mTabStrip.childCount
+        for (i in 0 until mTabStrip.childCount) {
+            val tabView = mTabStrip.getChildAt(i)
+            val textViewField = tabView.javaClass.getDeclaredField("textView")
+            textViewField.isAccessible = true
+            tabView.setPadding(0, 0, 0, 0)
+            val layoutParams = tabView.layoutParams as LinearLayout.LayoutParams
+            layoutParams.width = width
+            //                layoutParams.weight = 1f
+            tabView.layoutParams = layoutParams
+            tabView.invalidate()
+        }
     }
 
     fun getDistance(): Int {

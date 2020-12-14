@@ -101,14 +101,10 @@
                 android:paddingEnd="10dp"
                 android:src="@drawable/icon_back" />
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1" />
-
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/det_region"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:visibility="invisible"
                 app:tabIndicatorColor="@null"
@@ -136,16 +132,11 @@
                     android:text="推荐" />
             </com.google.android.material.tabs.TabLayout>
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1" />
-
             <ImageView
                 android:id="@+id/det_more"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="10dp"
                 android:src="@drawable/icon_more" />
 
         </LinearLayout>

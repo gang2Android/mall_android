@@ -19,7 +19,10 @@ class DetailInfoProvider : BaseItemProvider<DetailEntity>() {
 
         // <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
         val str =
-            "<img src=\"https://img30.360buyimg.com/sku/jfs/t1/104186/6/674/148330/5db2b8c2E9072e2af/b83a82fd365b84c7.jpg\">";
+                    "<style>" +
+                    "img{width:100%;height:auto;}" +
+                    "</style>" +
+                    "<img src=\"https://img30.360buyimg.com/sku/jfs/t1/104186/6/674/148330/5db2b8c2E9072e2af/b83a82fd365b84c7.jpg\">";
         webView.loadData(str, "text/html; charset=UTF-8", null)
     }
 }

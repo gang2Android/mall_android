@@ -1,16 +1,9 @@
-//plugins {
-//    id 'com.android.application'
-//    id 'kotlin-android'
-//    id 'kotlin-android-extensions'
-//    id 'kotlin-kapt'
-//}
 if (isDebug.toBoolean()) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
 }
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {

@@ -8,12 +8,6 @@
 
     <application>
         <activity
-            android:name=".login.LoginActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".reg.RegActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".address.AddressActivity"
             android:screenOrientation="portrait" />
         <activity

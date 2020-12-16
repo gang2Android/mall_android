@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -46,6 +45,7 @@ dependencies {
     api "com.google.android.material:material:$rootProject.ext.google_material"
     api "androidx.swiperefreshlayout:swiperefreshlayout:$rootProject.ext.swiperefreshlayout"
     api "androidx.viewpager2:viewpager2:$rootProject.ext.viewpager2"
+    api "androidx.startup:startup-runtime:$rootProject.ext.startup"
 
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

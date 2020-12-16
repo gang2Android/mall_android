@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.gang.module_main">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -28,5 +29,15 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+            <meta-data
+                android:name="com.gang.module_main.MainInitializer"
+                android:value="androidx.startup" />
+        </provider>
     </application>
 </manifest>

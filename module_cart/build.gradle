@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -37,6 +36,12 @@ android {
     }
 }
 
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
 kapt {
     arguments {
         arg("AROUTER_MODULE_NAME", project.getName())
@@ -56,7 +61,7 @@ dependencies {
     api project(path: ':module_base')
     api project(path: ':module_router')
 
-    api project(path: ':module_login')
+    implementation (name: 'module_login-release_1', ext: 'aar')
 
     implementation ("com.alibaba:arouter-api:$rootProject.ext.arouter_version"){
         exclude module:"fragment"

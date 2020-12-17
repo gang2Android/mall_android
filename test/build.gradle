@@ -64,7 +64,6 @@ dependencies {
         implementation project(path: ':module_goods')
         implementation project(path: ':module_cart')
         implementation project(path: ':module_user')
-        implementation project(path: ':module_order')
     }
     implementation("com.alibaba:arouter-api:$rootProject.ext.arouter_version") {
         exclude module: "fragment"

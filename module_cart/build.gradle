@@ -61,7 +61,7 @@ dependencies {
     api project(path: ':module_base')
     api project(path: ':module_router')
 
-    implementation (name: 'module_login-release_1', ext: 'aar')
+    implementation (name: 'component_login-release-1', ext: 'aar')
 
     implementation ("com.alibaba:arouter-api:$rootProject.ext.arouter_version"){
         exclude module:"fragment"

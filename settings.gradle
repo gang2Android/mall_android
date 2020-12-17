@@ -1,7 +1,6 @@
+include ':component_login'
 include ':component_order'
-include ':module_login'
 include ':module_pub'
-include ':module_order'
 include ':module_user'
 include ':module_cart'
 include ':module_router'

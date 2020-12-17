@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.gang.component">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.gang.component_order">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application>
+        <activity
+            android:name=".affirm.OrderAffirmActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".list.OrderListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".det.OrderDetActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".pay.PayActivity"
+            android:screenOrientation="portrait" />
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+            <meta-data
+                android:name="com.gang.component_order.OrderInitializer"
+                android:value="androidx.startup" />
+        </provider>
+    </application>
 </manifest>

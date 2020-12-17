@@ -12,15 +12,14 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/component_login" />
             <option value="$PROJECT_DIR$/component_order" />
             <option value="$PROJECT_DIR$/lib_base" />
             <option value="$PROJECT_DIR$/module_base" />
             <option value="$PROJECT_DIR$/module_cart" />
             <option value="$PROJECT_DIR$/module_goods" />
             <option value="$PROJECT_DIR$/module_home" />
-            <option value="$PROJECT_DIR$/module_login" />
             <option value="$PROJECT_DIR$/module_main" />
-            <option value="$PROJECT_DIR$/module_order" />
             <option value="$PROJECT_DIR$/module_pub" />
             <option value="$PROJECT_DIR$/module_router" />
             <option value="$PROJECT_DIR$/module_user" />

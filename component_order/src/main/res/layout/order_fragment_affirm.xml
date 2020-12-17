@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.gang.component_order.affirm.AffirmViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/affirm_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/affirm_action"
+            app:layout_constraintTop_toBottomOf="@id/affirm_top">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/affirm_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/affirm_top"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintBottom_toTopOf="@+id/affirm_refresh"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@android:drawable/arrow_down_float"
+            app:title="确认订单"
+            app:titleTextColor="@android:color/white" />
+
+        <LinearLayout
+            android:id="@+id/affirm_action"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="1dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical|end"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/affirm_refresh">
+
+            <TextView
+                android:id="@+id/affirm_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="@{vm.affirmBean.pricetotal}" />
+
+            <Button
+                android:id="@+id/affirm_pay"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:text="付款"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
